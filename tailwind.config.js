@@ -7,10 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: {
+          DEFAULT: "#b42828",
+        },
+        secondary: {
+          DEFAULT: "#aad0dc",
+        },
+        // 以下の通り追加していく
+        // red: { DEFAULT: "" },
+        // blue: { DEFAULT: "" },
+        // green: { DEFAULT: "" },
+        // purple: { DEFAULT: "" },
       },
     },
   },
