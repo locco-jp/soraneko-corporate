@@ -16,3 +16,21 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Responsive
+
+- mobile first で実装する
+- taiwind の default に従う
+  https://tailwindcss.com/docs/screens
+
+- sp, tb ... 1024px 未満
+- pc ... 1024px 以上 (lg: を使用)
+
+## Container
+
+- taiwind の .container は使用しない。
+  https://tailwindcss.com/docs/container
+
+- sp, tb ... max-width: 768px (max-w-3xl)
+- pc ... max-width: 1280px (max-w-7xl)
+  （作成しながら様子を見て変更）
