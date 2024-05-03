@@ -2,7 +2,7 @@
 
 import KV from "./_sections/kv";
 import About from "./_sections/about";
-import Button from "./components/button";
+import Button from "./_components/button";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 
