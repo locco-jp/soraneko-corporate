@@ -2,6 +2,8 @@
 
 import KV from "./_sections/kv";
 import About from "./_sections/about";
+import Zukan from "./_sections/zukan";
+import Case from "./_sections/case";
 import Button from "./_components/button";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
@@ -21,6 +23,19 @@ export default function Home() {
       <section>
         <About />
         <Button onClick={handleButtonClick} />
+      </section>
+
+      <section className="w-full h-screen">
+        <Zukan />
+      </section>
+
+      {/* dummy for scroll  */}
+      <section className="w-full h-screen"></section>
+      <section className="w-full h-screen"></section>
+      <section className="w-full h-screen"></section>
+
+      <section className="w-full h-screen">
+        <Case />
       </section>
     </main>
   );
