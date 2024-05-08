@@ -34,9 +34,15 @@ export default function Home() {
       <section className="w-full h-screen"></section>
       <section className="w-full h-screen"></section>
 
-      <section className="w-full h-screen">
+      <section className="w-full">
         <Case />
       </section>
+
+      {/* dummy for scroll  */}
+      <section className="w-full h-screen bg-black"></section>
+      <section className="w-full h-screen bg-white"></section>
+      <section className="w-full h-screen bg-black"></section>
+      <section className="w-full h-screen bg-white"></section>
     </main>
   );
 }
