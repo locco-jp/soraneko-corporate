@@ -8,7 +8,21 @@ export default function KV() {
         FLYING CAT LLC
       </h1>
       <Image
-        src="/monster1.png"
+        src="/anim-monster/1.png"
+        alt="monster"
+        width={1080}
+        height={1080}
+        priority
+      />
+      <Image
+        src="/anim-monster/2.png"
+        alt="monster"
+        width={1080}
+        height={1080}
+        priority
+      />
+      <Image
+        src="/anim-monster/3.png"
         alt="monster"
         width={1080}
         height={1080}
