@@ -55,14 +55,23 @@ export default function Zukan() {
   return (
     <div
       ref={containerRef}
-      className="h-full w-full flex items-center overflow-hidden"
+      className="h-full w-full flex items-center overflow-hidden relative"
     >
-      <div className="relative">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/zukan/ending/bg-dot.png"
+          alt="背景ドット"
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+
+      <div className="relative max-w-3xl mx-auto z-10">
         <Image
           src="/zukan/opening/1.png"
           alt="zukan-opening-text"
           sizes="100vw"
-          className="animation-rotate"
+          className="animation-rotate px-3"
           style={{ width: "100%", height: "auto" }}
           width="1766"
           height="1760"

@@ -82,8 +82,11 @@ export default function Case() {
 
   return (
     <div className="bg-blue-900">
-      <div ref={item1Ref} className="h-screen w-full p-6">
-        <div className="h-full flex flex-col bg-white p-6">
+      <div
+        ref={item1Ref}
+        className="h-screen w-full p-6 flex flex-col justify-center items-center"
+      >
+        <div className="h-full max-h-700 max-w-sm flex flex-col bg-white p-6">
           <div className="w-full bg-yellow-100 aspect-square relative mb-4">
             <Image
               ref={item1NumberRef}
@@ -127,8 +130,11 @@ export default function Case() {
         </div>
       </div>
 
-      <div ref={item2Ref} className="h-screen w-full p-6">
-        <div className="h-full flex flex-col bg-white p-6">
+      <div
+        ref={item2Ref}
+        className="h-screen w-full p-6 flex flex-col justify-center items-center"
+      >
+        <div className="h-full max-h-700  max-w-sm flex flex-col bg-white p-6">
           <div className="w-full bg-pink-100 aspect-square relative mb-4">
             <Image
               ref={item2NumberRef}
@@ -153,8 +159,8 @@ export default function Case() {
           <div className="h-full flex flex-col justify-between">
             <div>
               <p className="text-xs mb-2">妖怪</p>
-              <p className="text-3xl font-bold">紙かくし</p>
-              <p className="text-sm">KAMIKAKUSHI</p>
+              <p className="text-3xl font-bold">つまらん象</p>
+              <p className="text-sm">TSUMARAN ZOU</p>
             </div>
             <div>
               <p>生態</p>
@@ -181,7 +187,7 @@ export default function Case() {
             ref={itemLastMonsterRef}
             src="/zukan/ending/1.png"
             alt="01"
-            className="mb-6"
+            className="mx-auto mb-6"
             width={1072}
             height={500}
           />
