@@ -16,9 +16,11 @@ module.exports = {
         },
         // 以下の通り追加していく
         // red: { DEFAULT: "" },
-        // blue: { DEFAULT: "" },
+        blue: { DEFAULT: "#D5E6EB" },
         green: { DEFAULT: "#6AA4A6" },
         // purple: { DEFAULT: "" },
+        navy: { DEFAULT: "#003269" },
+        pink: { DEFAULT: "#EFC3C1" },
       },
     },
   },

@@ -22,7 +22,7 @@ export default function KV() {
           <br/>
           宮古列島最大規模のブティックファームです。
         </p>
-        <div class="flex -mt-12">
+        <div className="flex -mt-12">
           <Image
             src="/anim-monster/6.png"
             alt="monster"
