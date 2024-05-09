@@ -10,6 +10,7 @@ export default function Zukan() {
   const bookRef = useRef(null);
   const starRef = useRef(null);
   const nextRef = useRef(null);
+  const titleRef = useRef(null);
 
   const didEffect = useRef(false);
 
@@ -21,6 +22,7 @@ export default function Zukan() {
     const bookElement = bookRef.current;
     const starElement = starRef.current;
     const nextElement = nextRef.current;
+    const titleElement = titleRef.current;
 
     gsap
       .timeline({
@@ -43,6 +45,10 @@ export default function Zukan() {
       })
       .to(nextElement, {
         scale: 3,
+      })
+      .from(titleElement, {
+        opacity: 0,
+        y: 48,
       });
   }, []);
 
@@ -113,6 +119,14 @@ export default function Zukan() {
           ref={nextRef}
           className="absolute inset-0 bg-blue-900 rounded-full scale-0"
         ></div>
+
+        <div className="absolute inset-0 flex justify-center items-center">
+          <div ref={titleRef} className="text-center text-white mb-20">
+            <p className="mb-4">case</p>
+            <h2 className="text-4xl mb-2">妖怪図鑑</h2>
+            <p>そのお悩み、妖怪の仕業かも！？</p>
+          </div>
+        </div>
       </div>
     </div>
   );

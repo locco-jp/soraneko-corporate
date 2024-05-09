@@ -6,36 +6,29 @@ import { useRef, useEffect } from "react";
 export default function Case() {
   gsap.registerPlugin(ScrollTrigger);
 
-  const titleRef = useRef(null);
   const item1Ref = useRef(null);
   const item1NumberRef = useRef(null);
   const item1MonsterRef = useRef(null);
   const item2Ref = useRef(null);
   const item2NumberRef = useRef(null);
   const item2MonsterRef = useRef(null);
+  const itemLastRef = useRef(null);
+  const itemLastMonsterRef = useRef(null);
+
   const didEffect = useRef(false);
 
   useEffect(() => {
     if (didEffect.current) return;
     didEffect.current = true;
 
-    const titleElement = titleRef.current;
     const item1Element = item1Ref.current;
     const item1NumberElement = item1NumberRef.current;
     const item1MonsterElement = item1MonsterRef.current;
     const item2Element = item2Ref.current;
     const item2NumberElement = item2NumberRef.current;
     const item2MonsterElement = item2MonsterRef.current;
-
-    gsap.from(titleElement, {
-      opacity: 0,
-      y: 48,
-      scrollTrigger: {
-        trigger: titleElement,
-        start: "center bottom",
-        scrub: true,
-      },
-    });
+    const itemLastElement = itemLastRef.current;
+    const itemLastMonsterElement = itemLastMonsterRef.current;
 
     gsap
       .timeline({
@@ -70,18 +63,26 @@ export default function Case() {
       .from(item2MonsterElement, {
         opacity: 0,
       });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: itemLastElement,
+          start: "center center",
+          pin: true,
+          scrub: true,
+          // markers: true,
+        },
+      })
+      .from(itemLastMonsterElement, {
+        opacity: 0,
+        y: 48,
+      });
   }, []);
 
   return (
-    <div className="bg-blue-900 px-6">
-      <div ref={titleRef} className="text-center text-white mb-20">
-        <p className="mb-4">case</p>
-        <h2 className="text-4xl mb-2">妖怪図鑑</h2>
-        <p>そのお悩み、妖怪の仕業かも！？</p>
-      </div>
-
-      {/* {[1, 2, 3].map(() => ( */}
-      <div ref={item1Ref} className="h-screen w-full py-6">
+    <div className="bg-blue-900">
+      <div ref={item1Ref} className="h-screen w-full p-6">
         <div className="h-full flex flex-col bg-white p-6">
           <div className="w-full bg-yellow-100 aspect-square relative mb-4">
             <Image
@@ -125,9 +126,8 @@ export default function Case() {
           </div>
         </div>
       </div>
-      {/* ))} */}
 
-      <div ref={item2Ref} className="h-screen w-full py-6">
+      <div ref={item2Ref} className="h-screen w-full p-6">
         <div className="h-full flex flex-col bg-white p-6">
           <div className="w-full bg-pink-100 aspect-square relative mb-4">
             <Image
@@ -169,6 +169,41 @@ export default function Case() {
               <p>キャッシュフローが悪い。</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div
+        ref={itemLastRef}
+        className="h-screen w-full relative flex flex-col justify-center"
+      >
+        <div className="relative z-10">
+          <Image
+            ref={itemLastMonsterRef}
+            src="/zukan/ending/1.png"
+            alt="01"
+            className="mb-6"
+            width={1072}
+            height={500}
+          />
+
+          <div className="text-center text-white">
+            <p>
+              全案件に、カスタマードリブンなスタッフと
+              <br />
+              データの取り扱いに長けたスタッフが加わり、
+              <br />
+              高品質な施策をご提案します。
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute inset-0">
+          <Image
+            src="/zukan/ending/bg-dot.png"
+            alt="背景ドット"
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
       </div>
     </div>
