@@ -30,9 +30,12 @@ export default function Home() {
       </section>
 
       {/* dummy for scroll  */}
-      {[1, 2, 3].map(() => (
-        <section className="w-full h-screen bg-green"></section>
-      ))}
+      {[1, 2, 3].map((i) => {
+        let dummyKey = 'dummy-' + i;
+        return (
+          <section key={ dummyKey }  className="w-full h-screen bg-green"></section>
+        )
+      })}
 
       <section className="w-full">
         <Case />
