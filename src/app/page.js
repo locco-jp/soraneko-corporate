@@ -25,14 +25,14 @@ export default function Home() {
         <Button onClick={handleButtonClick} />
       </section>
 
-      <section className="w-full h-screen">
+      <section className="w-full h-screen bg-green">
         <Zukan />
       </section>
 
       {/* dummy for scroll  */}
-      <section className="w-full h-screen"></section>
-      <section className="w-full h-screen"></section>
-      <section className="w-full h-screen"></section>
+      {[1, 2, 3].map(() => (
+        <section className="w-full h-screen bg-green"></section>
+      ))}
 
       <section className="w-full">
         <Case />
