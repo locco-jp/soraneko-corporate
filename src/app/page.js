@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import KV from "./_sections/kv";
-import About from "./_sections/about";
-import Zukan from "./_sections/zukan";
-import Case from "./_sections/case";
-import Button from "./_components/button";
-import { useRouter } from "next/navigation";
-import { useCallback } from "react";
+import KV from './_sections/kv';
+import About from './_sections/about';
+import Zukan from './_sections/zukan';
+import Case from './_sections/case';
+import Button from './_components/button';
+import {useRouter} from 'next/navigation';
+import {useCallback} from 'react';
 
 export default function Home() {
   const router = useRouter();
   const handleButtonClick = useCallback(() => {
-    router.push("/sample");
+    router.push('/sample');
   }, []);
 
   return (
@@ -29,12 +29,14 @@ export default function Home() {
         <Zukan />
       </section>
 
-      {/* dummy for scroll  */}
-      {[1, 2, 3].map((i) => {
-        let dummyKey = 'dummy-' + i;
+      {/* space for scroll  */}
+      {[1, 2, 3].map(i => {
         return (
-          <section key={ dummyKey }  className="w-full h-screen bg-green"></section>
-        )
+          <section
+            key={`space${i}`}
+            className="w-full h-screen bg-green"
+          ></section>
+        );
       })}
 
       <section className="w-full">

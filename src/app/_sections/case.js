@@ -1,7 +1,7 @@
-import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, useEffect } from "react";
+import Image from 'next/image';
+import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useRef, useEffect} from 'react';
 
 export default function Case() {
   gsap.registerPlugin(ScrollTrigger);
@@ -34,7 +34,7 @@ export default function Case() {
       .timeline({
         scrollTrigger: {
           trigger: item1Element,
-          start: "center center",
+          start: 'center center',
           pin: true,
           scrub: true,
           // markers: true,
@@ -51,7 +51,7 @@ export default function Case() {
       .timeline({
         scrollTrigger: {
           trigger: item2Element,
-          start: "center center",
+          start: 'center center',
           pin: true,
           scrub: true,
           // markers: true,
@@ -68,7 +68,7 @@ export default function Case() {
       .timeline({
         scrollTrigger: {
           trigger: itemLastElement,
-          start: "center center",
+          start: 'center center',
           pin: true,
           scrub: true,
           // markers: true,
@@ -208,7 +208,7 @@ export default function Case() {
             src="/zukan/ending/bg-dot.png"
             alt="背景ドット"
             fill
-            style={{ objectFit: "cover" }}
+            style={{objectFit: 'cover'}}
           />
         </div>
       </div>
