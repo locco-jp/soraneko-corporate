@@ -1,7 +1,7 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, useEffect } from "react";
-import Image from "next/image";
+import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useRef, useEffect} from 'react';
+import Image from 'next/image';
 
 export default function Zukan() {
   gsap.registerPlugin(ScrollTrigger);
@@ -28,7 +28,7 @@ export default function Zukan() {
       .timeline({
         scrollTrigger: {
           trigger: containerElement,
-          start: "center center",
+          start: 'center center',
           end: `${containerElement.getBoundingClientRect().height * 3} top`,
           scrub: true,
           pin: true,
@@ -39,7 +39,7 @@ export default function Zukan() {
         scale: 0,
       })
       .to(starElement, {
-        transformOrigin: "44% 40%",
+        transformOrigin: '44% 40%',
         scale: 100,
         rotate: 360,
       })
@@ -62,7 +62,7 @@ export default function Zukan() {
           src="/zukan/ending/bg-dot.png"
           alt="背景ドット"
           fill
-          style={{ objectFit: "cover" }}
+          style={{objectFit: 'cover'}}
         />
       </div>
 
@@ -72,7 +72,7 @@ export default function Zukan() {
           alt="zukan-opening-text"
           sizes="100vw"
           className="animation-rotate px-3"
-          style={{ width: "100%", height: "auto" }}
+          style={{width: '100%', height: 'auto'}}
           width="1766"
           height="1760"
         />
@@ -80,7 +80,7 @@ export default function Zukan() {
         <Image
           src="/zukan/opening/2.png"
           alt="zukan-opening-cloud1"
-          style={{ position: "absolute", top: 0, right: -88 }}
+          style={{position: 'absolute', top: 0, right: -88}}
           width="1037"
           height="869"
         />
@@ -88,7 +88,7 @@ export default function Zukan() {
         <Image
           src="/zukan/opening/3.png"
           alt="zukan-opening-cloud2"
-          style={{ position: "absolute", bottom: 0, left: -88 }}
+          style={{position: 'absolute', bottom: 0, left: -88}}
           width="1009"
           height="518"
         />
@@ -98,7 +98,7 @@ export default function Zukan() {
             src="/zukan/opening/4.png"
             alt="zukan-opening-book"
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 0,
               left: 0,
               right: 0,
@@ -113,7 +113,7 @@ export default function Zukan() {
             src="/zukan/opening/5.png"
             alt="zukan-opening-star"
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 0,
               left: 0,
               right: 0,
