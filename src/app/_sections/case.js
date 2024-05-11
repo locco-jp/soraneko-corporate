@@ -215,3 +215,11 @@ export default function Case() {
     </div>
   );
 }
+
+export function PcCase() {
+  return (
+    <div className="h-screen w-full p-6 flex flex-col justify-center items-center">
+      pc case
+    </div>
+  );
+}

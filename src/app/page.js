@@ -3,7 +3,7 @@
 import KV from './_sections/kv';
 import About from './_sections/about';
 import Zukan from './_sections/zukan';
-import Case from './_sections/case';
+import Case, {PcCase} from './_sections/case';
 import Button from './_components/button';
 import {useRouter} from 'next/navigation';
 import {useCallback} from 'react';
@@ -39,8 +39,11 @@ export default function Home() {
         );
       })}
 
-      <section className="w-full">
+      <section className="w-full lg:hidden">
         <Case />
+      </section>
+      <section className="w-full hidden lg:block">
+        <PcCase />
       </section>
 
       {/* dummy for scroll  */}
