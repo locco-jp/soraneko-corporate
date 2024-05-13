@@ -4,6 +4,7 @@ import KV from './_sections/kv';
 import About from './_sections/about';
 import Zukan from './_sections/zukan';
 import Case, {PcCase} from './_sections/case';
+import Initiative from './_sections/initiative'
 import Button from './_components/button';
 import {useRouter} from 'next/navigation';
 import {useCallback} from 'react';
@@ -51,6 +52,10 @@ export default function Home() {
       <section className="w-full h-screen bg-white"></section>
       <section className="w-full h-screen bg-black"></section>
       <section className="w-full h-screen bg-white"></section>
+
+      <section className='w-full'>
+        <Initiative />
+      </section>
     </main>
   );
 }
