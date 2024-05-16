@@ -51,7 +51,7 @@ export default function Home() {
       <section className="w-full lg:hidden">
         <Case />
       </section>
-      <section className="w-full hidden lg:block">
+      <section className="w-full hidden lg:block overflow-x-hidden">
         <PcCase />
       </section>
 
