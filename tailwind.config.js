@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mundial: ['mundial', 'sans-serif'],
+      },
       colors: {
         primary: {
           DEFAULT: '#b42828',
