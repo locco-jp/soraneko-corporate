@@ -21,7 +21,7 @@ export default function Company() {
 
   return (
     <div className="flex w-full max-w-3xl mx-auto lg:max-w-7xl py-40">
-      <div className="w-1/5 flex-grow flex-grow">
+      <div className="w-1/5 flex-grow flex-shrink">
         <h2 className="text-4xl font-bold mb-4">会社概要</h2>
         <p className="text-xl font-bold">COMPANY</p>
       </div>
@@ -29,7 +29,10 @@ export default function Company() {
         <div>
           {items.map((item, i) => {
             return (
-              <div className="flex border-b border-primary pb-4 mb-4">
+              <div
+                key={`company-${i}`}
+                className="flex border-b border-primary pb-4 mb-4"
+              >
                 <div className="w-60">{item.label}</div>
                 <div>{item.text}</div>
               </div>
