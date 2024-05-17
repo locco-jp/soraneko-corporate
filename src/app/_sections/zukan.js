@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useRef, useEffect} from 'react';
 import Image from 'next/image';
+import {mochiy} from '../_utils/font';
 
 export default function Zukan() {
   gsap.registerPlugin(ScrollTrigger);
@@ -126,14 +127,23 @@ export default function Zukan() {
 
         <div
           ref={nextRef}
-          className="absolute inset-0 bg-blue-900 rounded-full scale-0"
+          className="absolute inset-0 bg-navy rounded-full scale-0"
         ></div>
 
         <div className="absolute inset-0 flex justify-center items-center">
           <div ref={titleRef} className="text-center text-white mb-20">
-            <p className="mb-4">case</p>
-            <h2 className="text-4xl mb-2">妖怪図鑑</h2>
-            <p>そのお悩み、妖怪の仕業かも！？</p>
+            <p className="mb-9 font-mundial tracking-widest text-xs">CASE</p>
+            <h2 className="mb-4 px-16">
+              <Image
+                src="/zukan/zukan.svg"
+                alt="妖怪図鑑"
+                width="477"
+                height="106"
+              />
+            </h2>
+            <p className={`${mochiy.className} text-sm tracking-widest`}>
+              そのお悩み、妖怪の仕業かも!?
+            </p>
           </div>
         </div>
       </div>
