@@ -27,12 +27,12 @@ export default function Member() {
           {sections.map((section, i) => {
             return (
               <div
+                key={`member-section-${i}`}
                 className={`w-full flex justify-${
                   i % 2 === 0 ? 'end' : 'start'
                 }`}
               >
                 <div
-                  key={i}
                   className={`flex justify-between w-9/12 justify-${
                     i % 2 === 0 ? 'end' : 'start'
                   }`}
@@ -41,7 +41,7 @@ export default function Member() {
                   {section.map((item, i) => {
                     return (
                       <div
-                        key={i}
+                        key={`member-${i}`}
                         className={`relative flex w-4/12 m${
                           i % 2 === 0 ? 'r' : 'l'
                         }-50`}
