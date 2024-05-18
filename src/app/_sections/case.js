@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useRef, useEffect, createRef} from 'react';
 import {monsters} from '../_constants/monster';
+import {mochiy, notoSansJP} from '../_utils/font';
 
 export default function Case() {
   gsap.registerPlugin(ScrollTrigger);
@@ -63,7 +64,7 @@ export default function Case() {
   }, []);
 
   return (
-    <div className="bg-blue-900">
+    <div className="bg-navy">
       {monsters.map((m, i) => (
         <div
           ref={monsterItemRefs.current[i]}
@@ -71,44 +72,61 @@ export default function Case() {
           className="h-screen w-full p-6 flex flex-col justify-center items-center"
         >
           <div className="h-full max-h-700 max-w-sm flex flex-col bg-white p-6">
-            <div className="w-full bg-yellow-100 aspect-square relative mb-4">
+            <div className="w-full aspect-square relative mb-4">
               <Image
-                ref={monsterNumberRefs.current[i]}
-                src={`/zukan/number/${i + 1}.png`}
-                alt="01"
-                className="absolute top-6 right-6"
-                width={36}
-                height={40}
-                priority
+                src={`/zukan/bg/${i + 1}.png`}
+                alt=""
+                className="absolute inset-0 z-0"
+                width={1080}
+                height={1080}
               />
+
+              <p
+                ref={monsterNumberRefs.current[i]}
+                className={`absolute top-6 ${
+                  i % 2 === 0 ? 'right-6' : 'left-6'
+                } z-10 ${mochiy.className} text-4xl`}
+              >{`0${i + 1}`}</p>
 
               <Image
                 ref={monsterMonsterRefs.current[i]}
                 src={`/anim-monster/${i + 1}.png`}
                 alt="monster"
+                className="relative z-20"
                 width={1080}
                 height={1080}
-                priority
               />
             </div>
 
-            <div className="h-full flex flex-col justify-between">
+            <div
+              className={`h-full flex flex-col justify-between ${notoSansJP.className}`}
+            >
               <div>
-                <p className="text-xs mb-2">妖怪</p>
-                <p className="text-3xl font-bold">{m.name.ja}</p>
-                <p className="text-sm">{m.name.en}</p>
+                <p className="text-xs font-bold tracking-widest mb-1">妖怪</p>
+                <p className="text-2xl tracking-wider font-bold">{m.name.ja}</p>
+                <p className="font-mundial text-sm">{m.name.en}</p>
               </div>
+
               <div>
-                <p>生態</p>
-                <p>人間の焦る顔が大好き。</p>
-                <p>人間が大事にしている紙を根こそぎ盗んでしまう。</p>
-                <p>紙の中でも特に紙幣を好み、</p>
-                <p>盗んだ紙は寝床として敷き詰めている。</p>
+                <p className="bg-primary text-white rounded-full inline-block px-4 py-1 text-xs">
+                  <span className="mr-3">生</span>
+                  <span>態</span>
+                </p>
+                <p
+                  className="text-xs mt-2 leading-6 font-medium"
+                  dangerouslySetInnerHTML={{__html: m.ecology}}
+                />
               </div>
+
               <div>
-                <p>事象</p>
-                <p>売上が少ない、利益率が低い、</p>
-                <p>キャッシュフローが悪い。</p>
+                <p className="bg-primary text-white rounded-full inline-block px-4 py-1 text-xs">
+                  <span className="mr-3">事</span>
+                  <span>象</span>
+                </p>
+                <p
+                  className="text-xs mt-2 leading-6 font-medium"
+                  dangerouslySetInnerHTML={{__html: m.phenomenon}}
+                />
               </div>
             </div>
           </div>
@@ -122,14 +140,16 @@ export default function Case() {
         <div className="relative z-10">
           <Image
             ref={itemLastMonsterRef}
-            src="/zukan/ending/1.png"
+            src="/zukan/ending/1-sp.png"
             alt="01"
-            className="mx-auto mb-6"
+            className="mx-auto mb-4"
             width={1072}
             height={500}
           />
 
-          <div className="text-center text-white">
+          <div
+            className={`text-center text-white ${notoSansJP.className} text-sm font-bold leading-8`}
+          >
             <p>
               全案件に、カスタマードリブンなスタッフと
               <br />

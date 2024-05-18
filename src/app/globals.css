@@ -42,3 +42,10 @@ body {
 .max-h-700 {
   max-height: 700px;
 }
+
+.w-zukan {
+  width: 238px;
+  @media (min-width: 1024px) {
+    width: 530px;
+  }
+}
