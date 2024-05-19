@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Company() {
   let items = [
     {label: '会社名', text: '空とぶネコ合同会社'},
