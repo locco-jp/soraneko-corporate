@@ -1,5 +1,6 @@
 import {Inter} from 'next/font/google';
 import './globals.css';
+import TypekitLoader from './_utils/TypekitLoader';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -11,6 +12,7 @@ export const metadata = {
 export default function RootLayout({children, modal}) {
   return (
     <html lang="ja">
+      <TypekitLoader />
       <body className={inter.className}>
         {children}
         {modal}
