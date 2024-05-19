@@ -11,21 +11,40 @@ export default function ScrollAnimatedComponent() {
   useEffect(() => {
     const element = componentRef.current;
 
-    // TODO: アニメーション実装
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: element,
-    //     start: "top 80%",
-    //     end: "bottom 20%",
-    //     scrub: true,
-    //     toggleActions: "play none none none",
-    //   },
-    // });
-
-    // tl.from(element, {
-    //   opacity: 0,
-    //   duration: 1,
-    // });
+    // 風景
+    gsap.fromTo(
+      '.parallax-landscape',
+      {
+        yPercent: -10,
+      },
+      {
+        yPercent: 35,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.parallax-trigger',
+          start: 'center bottom',
+          end: 'center top',
+          scrub: true,
+        },
+      }
+    );
+    // 雲
+    gsap.fromTo(
+      '.parallax-crowd',
+      {
+        yPercent: -16,
+      },
+      {
+        yPercent: 120,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.parallax-trigger',
+          start: 'top bottom',
+          end: 'center top',
+          scrub: true,
+        },
+      }
+    );
   }, []);
 
   return (
@@ -84,10 +103,22 @@ export default function ScrollAnimatedComponent() {
         </div>
       </div>
       {/* パララックス */}
-      {/* <div>
-        <Image src="/parallax/1.png" alt="風景" width={300} height={300} />
-        <Image src="/parallax/2.png" alt="雲" width={300} height={300} />
-      </div> */}
+      <div className="relative parallax-trigger">
+        <Image
+          src="/parallax/2.png"
+          alt="風景"
+          className="parallax-landscape w-full"
+          width={300}
+          height={300}
+        />
+        <Image
+          src="/parallax/1.png"
+          alt="雲"
+          className="parallax-crowd absolute inset-0 w-full"
+          width={300}
+          height={300}
+        />
+      </div>
     </div>
   );
 }
