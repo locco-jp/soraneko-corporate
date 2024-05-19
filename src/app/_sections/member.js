@@ -3,12 +3,12 @@ import Image from 'next/image';
 export default function Member() {
   let sections = [
     [
-      {label: 'KANEKO', image_type: 'wink'},
-      {label: 'KANNO', image_type: 'default'},
+      {id: 'kaneko', label: 'KANEKO', image_type: 'wink'},
+      {id: 'kanno', label: 'KANNO', image_type: 'default'},
     ],
     [
-      {label: 'KONNO', image_type: 'default'},
-      {label: 'SUPPROT', image_type: 'close'},
+      {id: 'konno', label: 'KONNO', image_type: 'default'},
+      {id: 'support', label: 'SUPPORT', image_type: 'close'},
     ],
   ];
 
