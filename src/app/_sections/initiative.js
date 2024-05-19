@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import CompanyItem from '../_components/company';
 
 export default function Initiative() {

@@ -53,7 +53,7 @@ export default function Member() {
                           <div className="w-10 h-10 -rotate-90">
                             <Image
                               src="button_arrow.svg"
-                              art="arrow"
+                              alt="arrow"
                               width={100}
                               height={100}
                             />
