@@ -2,11 +2,13 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useRef, useEffect} from 'react';
 import Image from 'next/image';
+import {isMobile} from 'react-device-detect';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollAnimatedComponent() {
   const componentRef = useRef(null);
+  console.log(isMobile);
 
   useEffect(() => {
     const element = componentRef.current;
@@ -15,10 +17,10 @@ export default function ScrollAnimatedComponent() {
     gsap.fromTo(
       '.parallax-landscape',
       {
-        yPercent: -10,
+        yPercent: isMobile ? 0 : -10,
       },
       {
-        yPercent: 35,
+        yPercent: isMobile ? 42 : 35,
         ease: 'none',
         scrollTrigger: {
           trigger: '.parallax-trigger',
@@ -32,10 +34,10 @@ export default function ScrollAnimatedComponent() {
     gsap.fromTo(
       '.parallax-crowd',
       {
-        yPercent: -16,
+        yPercent: isMobile ? 5 : -16,
       },
       {
-        yPercent: 120,
+        yPercent: isMobile ? 145 : 120,
         ease: 'none',
         scrollTrigger: {
           trigger: '.parallax-trigger',
@@ -49,17 +51,23 @@ export default function ScrollAnimatedComponent() {
 
   return (
     <div ref={componentRef}>
-      <div className="w-full max-w-3xl mx-auto">
-        <p className="text-xl font-bold">
-          私たちは、デジタル・ローカル・コマースを
+      <div className="w-full max-w-3xl mx-auto px-8">
+        <p className="text-xl font-bold mb-9 lg:mb-0">
+          私たちは、
+          <br className="lg:hidden" />
+          デジタル・ローカル・コマースを
           <br />
-          テーマに、地域の農作物の利活用・農業支援・
-          <br />
-          海洋環境保全に取り組みます。
+          テーマに、地域の農作物の利活用・
+          <br className="lg:hidden" />
+          農業支援・
+          <br className="hidden lg:block" />
+          海洋環境保全に
+          <br className="lg:hidden" />
+          取り組みます。
         </p>
-        <div className="flex justify-center w-full mb-20">
-          <div className="w-full text-xs font-bold leading-7 lg:pt-8">
-            <p className="mb-10">
+        <div className="flex flex-col justify-center lg:flex-row w-full mb-10 lg:mb-20">
+          <div className="w-full text-xs font-bold leading-7 mb-10 lg:mb-0 lg:pt-8">
+            <p className="mb-8">
               個人経営店からグローバル展開する企業まで、
               <br />
               様々な規模のプロジェクトで「CxO」として、
@@ -93,10 +101,11 @@ export default function ScrollAnimatedComponent() {
           </div>
         </div>
         <div className="w-full">
+          {/* TODO: sp画像追加 */}
           <Image
             src="/about/2.png"
             alt="TODO"
-            className="w-full pl-12"
+            className="w-full lg:pl-12"
             width={300}
             height={300}
           />
@@ -114,7 +123,7 @@ export default function ScrollAnimatedComponent() {
         <Image
           src="/parallax/1.png"
           alt="雲"
-          className="parallax-crowd absolute inset-0 w-full"
+          className="parallax-crowd absolute inset-0 w-full scale-125 lg:scale-100"
           width={300}
           height={300}
         />
