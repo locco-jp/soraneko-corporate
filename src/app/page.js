@@ -13,6 +13,7 @@ import InNumbers from './_sections/inNumbers';
 import Company from './_sections/company';
 import Footer from './_sections/footer';
 import News from './_sections/news';
+import Flow from './_sections/flow';
 
 export default function Home() {
   const router = useRouter();
@@ -28,11 +29,13 @@ export default function Home() {
 
       <section className="w-full">
         <About />
-        <Button onClick={handleButtonClick} />
+        {/* <Button onClick={handleButtonClick} /> */}
       </section>
 
       {/* flow */}
-      <section className="w-full"></section>
+      <section className="w-full">
+        <Flow />
+      </section>
 
       <section className="w-full h-screen bg-green">
         <Zukan />
