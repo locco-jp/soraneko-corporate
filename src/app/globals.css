@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO: 表示されないので一旦非表示 */
-/* html {
+html {
   visibility: hidden;
 }
 html.wf-active {
   visibility: visible;
-} */
+}
 /* :root {
 } */
 /* dark-mode
