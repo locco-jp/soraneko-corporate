@@ -55,12 +55,6 @@ export default function Home() {
         <PcCase />
       </section>
 
-      {/* dummy for scroll  */}
-      <section className="w-full h-screen bg-black"></section>
-      <section className="w-full h-screen bg-white"></section>
-      <section className="w-full h-screen bg-black"></section>
-      <section className="w-full h-screen bg-white"></section>
-
       <section className="w-full">
         <Initiative />
       </section>

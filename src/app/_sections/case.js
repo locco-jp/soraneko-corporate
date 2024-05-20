@@ -91,7 +91,7 @@ export default function Case() {
               <Image
                 ref={monsterMonsterRefs.current[i]}
                 src={`/anim-monster/${i + 1}.png`}
-                alt="monster"
+                alt="monster image"
                 className="relative z-20"
                 width={1080}
                 height={1080}
@@ -141,10 +141,10 @@ export default function Case() {
           <Image
             ref={itemLastMonsterRef}
             src="/zukan/ending/1-sp.png"
-            alt="01"
+            alt=""
             className="mx-auto mb-4"
-            width={1072}
-            height={500}
+            width={726}
+            height={622}
           />
 
           <div
@@ -228,80 +228,104 @@ export function PcCase() {
   return (
     <div
       ref={pcContainerRef}
-      className="h-screen flex flex-nowrap bg-blue-900"
+      className="h-screen flex flex-nowrap bg-navy"
       style={{width: `${(monsters.length + 1) * 100}%`}}
     >
       {monsters.map((m, i) => (
         <div
           key={m.name.en}
-          className="h-full w-full p-6 flex flex-col justify-center items-center box-border"
+          className="h-full w-screen p-6 flex flex-col justify-center items-center box-border"
         >
-          <div className="h-full max-h-700 flex bg-white p-20">
-            <div className="h-full bg-yellow-100 aspect-square relative mr-20">
+          <div className="h-full w-full max-h-700 max-w-1280 flex bg-white pl-20 py-20 pr-2">
+            <div className="h-full aspect-square relative mr-16">
               <Image
-                ref={pcMonsterNumberRefs.current[i]}
-                src={`/zukan/number/${i + 1}.png`}
-                alt="01"
-                className="absolute top-6 right-6"
-                width={36}
-                height={40}
-                priority
+                src={`/zukan/bg/${i + 1}.png`}
+                alt=""
+                className="absolute inset-0 z-0"
+                width={1080}
+                height={1080}
               />
+
+              <p
+                ref={pcMonsterNumberRefs.current[i]}
+                className={`absolute top-6 ${
+                  i % 2 === 0 ? 'right-6' : 'left-6'
+                } z-10 ${mochiy.className} text-8xl`}
+              >{`0${i + 1}`}</p>
 
               <Image
                 ref={pcMonsterImageRefs.current[i]}
                 src={`/anim-monster/${i + 1}.png`}
-                alt="monster"
+                alt="monster image"
+                className="relative z-20"
                 width={1080}
                 height={1080}
                 priority
               />
             </div>
 
-            <div className="w-full flex flex-col justify-between">
+            <div
+              className={`w-full flex flex-col justify-center gap-16 ${notoSansJP.className}`}
+            >
               <div>
-                <p className="text-xs mb-2">妖怪</p>
-                <p className="text-3xl font-bold">{m.name.ja}</p>
-                <p className="text-sm">{m.name.en}</p>
+                <p className="text-lg font-bold tracking-widest mb-2">妖怪</p>
+                <p className="text-4xl tracking-wider font-bold mb-2">
+                  {m.name.ja}
+                </p>
+                <p className="font-mundial tracking-widest text-sm">
+                  {m.name.en}
+                </p>
               </div>
+
               <div>
-                <p>生態</p>
-                <p>{m.ecology}</p>
+                <p className="bg-primary text-white rounded-full inline-block px-5 py-1 text-lg">
+                  <span>生　態</span>
+                </p>
+                <p
+                  className="text-lg mt-4 leading-10 font-medium"
+                  dangerouslySetInnerHTML={{__html: m.ecology}}
+                />
               </div>
+
               <div>
-                <p>事象</p>
-                <p>{m.phenomenon}</p>
+                <p className="bg-primary text-white rounded-full inline-block px-5 py-1 text-lg">
+                  <span>事　象</span>
+                </p>
+                <p
+                  className="text-lg mt-4 leading-10 font-medium"
+                  dangerouslySetInnerHTML={{__html: m.phenomenon}}
+                />
               </div>
             </div>
           </div>
         </div>
       ))}
 
-      <div className="h-full w-full relative flex flex-col justify-center">
+      <div className="h-full w-screen mx-auto relative flex flex-col justify-center">
         <div className="relative z-10">
           <Image
             ref={pcItemLastMonsterRef}
             src="/zukan/ending/1.png"
-            alt="01"
+            alt=""
             className="mx-auto mb-6"
             width={1072}
             height={500}
           />
 
-          <div className="text-center text-white">
-            <p>
-              全案件に、カスタマードリブンなスタッフと
-              <br />
-              データの取り扱いに長けたスタッフが加わり、
-              <br />
-              高品質な施策をご提案します。
-            </p>
-          </div>
+          <p
+            className={`text-center text-2xl text-white ${notoSansJP.className} font-bold leading-10 tracking-wider`}
+          >
+            全案件に、カスタマードリブンなスタッフと
+            <br />
+            データの取り扱いに長けたスタッフが加わり、
+            <br />
+            高品質な施策をご提案します。
+          </p>
         </div>
 
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 opacity-50">
           <Image
-            src="/zukan/ending/bg-dot.png"
+            src="/zukan/ending/bg-dot-pc.png"
             alt="背景ドット"
             fill
             style={{objectFit: 'cover'}}

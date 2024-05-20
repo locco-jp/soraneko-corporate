@@ -39,6 +39,10 @@ body {
   }
 }
 
+.max-w-1280 {
+  max-width: 1280px;
+}
+
 .max-h-700 {
   max-height: 700px;
 }
