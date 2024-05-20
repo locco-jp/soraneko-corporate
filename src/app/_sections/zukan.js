@@ -132,16 +132,21 @@ export default function Zukan() {
 
         <div className="absolute inset-0 flex justify-center items-center">
           <div ref={titleRef} className="text-center text-white mb-20">
-            <p className="mb-9 font-mundial tracking-widest text-xs">CASE</p>
-            <h2 className="mb-4 px-16">
+            <p className="mb-9 lg:mb-16 font-mundial tracking-widest text-xs lg:text-xl">
+              CASE
+            </p>
+            <h2 className="mb-4 lg:mb-7 px-16">
               <Image
                 src="/zukan/zukan.svg"
                 alt="妖怪図鑑"
+                className="w-zukan"
                 width="477"
                 height="106"
               />
             </h2>
-            <p className={`${mochiy.className} text-sm tracking-widest`}>
+            <p
+              className={`${mochiy.className} text-sm lg:text-3xl tracking-widest`}
+            >
               そのお悩み、妖怪の仕業かも!?
             </p>
           </div>
