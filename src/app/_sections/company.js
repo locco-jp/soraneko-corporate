@@ -12,9 +12,7 @@ export default function Company() {
     {label: '代表者', text: '金子 史人'},
     {
       label: 'スローガン',
-      text: `ひとつでも多くの地域の悩みを緩和・解決する / ${
-        isMobile ? '\n' : ''
-      }生活者原理主義`,
+      text: 'ひとつでも多くの地域の悩みを緩和・解決する / 生活者原理主義',
     },
     {label: '顧問弁護士', text: 'TMI総合法律法律事務所'},
     {label: '顧問税理士', text: '緒方健税理士事務所'},
