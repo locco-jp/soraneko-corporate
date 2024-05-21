@@ -37,7 +37,7 @@ export default function ScrollAnimatedComponent() {
         yPercent: isMobile ? 5 : -16,
       },
       {
-        yPercent: isMobile ? 145 : 120,
+        yPercent: isMobile ? 82 : 120,
         ease: 'none',
         scrollTrigger: {
           trigger: '.parallax-trigger',
@@ -116,14 +116,21 @@ export default function ScrollAnimatedComponent() {
         <Image
           src="/parallax/2.png"
           alt="風景"
-          className="parallax-landscape w-full"
+          className="block parallax-landscape w-full"
           width={300}
           height={300}
         />
         <Image
-          src="/parallax/1.png"
+          src="/parallax/1_pc.png"
           alt="雲"
-          className="parallax-crowd absolute inset-0 w-full scale-125 lg:scale-100"
+          className="parallax-crowd absolute inset-0 hidden lg:block w-full"
+          width={300}
+          height={300}
+        />
+        <Image
+          src="/parallax/1_sp.png"
+          alt="雲"
+          className="parallax-crowd absolute inset-0 lg:hidden w-full"
           width={300}
           height={300}
         />
