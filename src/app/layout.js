@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function RootLayout({children, modal}) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning={true}>
       <TypekitLoader />
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         {children}
         {modal}
       </body>

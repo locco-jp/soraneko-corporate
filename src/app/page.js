@@ -13,6 +13,7 @@ import InNumbers from './_sections/inNumbers';
 import Company from './_sections/company';
 import Footer from './_sections/footer';
 import News from './_sections/news';
+import Flow from './_sections/flow';
 
 export default function Home() {
   const router = useRouter();
@@ -22,17 +23,19 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between text-primary">
-      <section className="w-full max-w-3xl lg:max-w-7xl">
+      <section className="w-full">
         <KV />
       </section>
 
       <section className="w-full">
         <About />
-        <Button onClick={handleButtonClick} />
+        {/* <Button onClick={handleButtonClick} /> */}
       </section>
 
       {/* flow */}
-      <section className="w-full"></section>
+      <section className="w-full">
+        <Flow />
+      </section>
 
       <section className="w-full h-screen bg-green">
         <Zukan />
@@ -54,12 +57,6 @@ export default function Home() {
       <section className="w-full hidden lg:block overflow-x-hidden">
         <PcCase />
       </section>
-
-      {/* dummy for scroll  */}
-      <section className="w-full h-screen bg-black"></section>
-      <section className="w-full h-screen bg-white"></section>
-      <section className="w-full h-screen bg-black"></section>
-      <section className="w-full h-screen bg-white"></section>
 
       <section className="w-full">
         <Initiative />

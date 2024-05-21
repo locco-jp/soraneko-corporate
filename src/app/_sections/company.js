@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import {isMobile} from 'react-device-detect';
 
 export default function Company() {
   let items = [
@@ -20,21 +20,23 @@ export default function Company() {
   ];
 
   return (
-    <div className="flex w-full max-w-3xl mx-auto lg:max-w-7xl py-40">
-      <div className="w-1/5 flex-grow flex-shrink">
-        <h2 className="text-4xl font-bold mb-4">会社概要</h2>
+    <div className="flex flex-col lg:flex-row w-full max-w-3xl mx-auto lg:max-w-7xl py-40 px-8">
+      <div className="w-full lg:w-1/5 flex-grow flex-shrink mb-8 lg:mb-0">
+        <h2 className="text-4xl font-bold mb-2 lg:mb-4">会社概要</h2>
         <p className="text-xl font-bold">COMPANY</p>
       </div>
-      <div className="w-3/5">
+      <div className="w-full lg:w-3/5">
         <div>
           {items.map((item, i) => {
             return (
               <div
                 key={`company-${i}`}
-                className="flex border-b border-primary pb-4 mb-4"
+                className="flex flex-col border-b border-primary pb-4 mb-4"
               >
-                <div className="w-60">{item.label}</div>
-                <div>{item.text}</div>
+                <div className="font-bold mb-1 lg:mb-0 lg:font-normal lg:w-60">
+                  {item.label}
+                </div>
+                <div className="whitespace-pre-wrap">{item.text}</div>
               </div>
             );
           })}
