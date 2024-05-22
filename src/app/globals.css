@@ -53,3 +53,7 @@ body {
     width: 530px;
   }
 }
+
+.button-shadow {
+  box-shadow: 2px 2px #b42828;
+}
