@@ -39,10 +39,6 @@ body {
   }
 }
 
-.max-w-1280 {
-  max-width: 1280px;
-}
-
 .max-h-700 {
   max-height: 700px;
 }
@@ -56,4 +52,12 @@ body {
 
 .button-shadow {
   box-shadow: 2px 2px #b42828;
+}
+
+.rotate-20 {
+  transform: rotate(20deg);
+}
+
+.flex-fix {
+  flex: 1 0 auto;
 }
