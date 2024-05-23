@@ -134,6 +134,10 @@ export default function ScrollAnimatedComponent() {
           height={300}
         />
       </div>
+      {/* spacer */}
+      <div className="relative -z-10 bg-green h-56 w-full lg:h-144">
+        <div className="absolute -bottom-1 right-0 left-0 bg-green h-4 w-full"></div>
+      </div>
     </div>
   );
 }
