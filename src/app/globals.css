@@ -4,6 +4,7 @@
 
 html {
   visibility: hidden;
+  scroll-behavior: smooth;
 }
 html.wf-active {
   visibility: visible;

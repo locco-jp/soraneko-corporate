@@ -54,14 +54,16 @@ export default function Home() {
         );
       })}
 
-      <section className="w-full lg:hidden">
-        <Case />
-      </section>
-      <section className="w-full hidden lg:block overflow-x-hidden">
-        <PcCase />
-      </section>
+      <div id="case" className="w-full">
+        <section className="w-full lg:hidden">
+          <Case />
+        </section>
+        <section className="w-full hidden lg:block overflow-x-hidden">
+          <PcCase />
+        </section>
+      </div>
 
-      <section className="w-full">
+      <section id="initiative" className="w-full">
         <Initiative />
       </section>
 
