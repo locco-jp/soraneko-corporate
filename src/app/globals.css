@@ -4,6 +4,7 @@
 
 html {
   visibility: hidden;
+  scroll-behavior: smooth;
 }
 html.wf-active {
   visibility: visible;
@@ -37,10 +38,6 @@ body {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.max-w-1280 {
-  max-width: 1280px;
 }
 
 .max-h-700 {
@@ -84,4 +81,16 @@ body {
   @media (min-width: 1024px) {
     inset: 10rem 16rem !important;
   }
+}
+
+.button-shadow {
+  box-shadow: 2px 2px #b42828;
+}
+
+.rotate-20 {
+  transform: rotate(20deg);
+}
+
+.flex-fix {
+  flex: 1 0 auto;
 }

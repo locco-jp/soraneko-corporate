@@ -13,7 +13,7 @@ import InNumbers from './_sections/inNumbers';
 import Company from './_sections/company';
 import Footer from './_sections/footer';
 import News from './_sections/news';
-import Flow from './_sections/flow';
+import Flow, {PcFlow} from './_sections/flow';
 
 export default function Home() {
   const router = useRouter();
@@ -33,8 +33,11 @@ export default function Home() {
       </section>
 
       {/* flow */}
-      <section className="w-full">
+      <section className="w-full lg:hidden">
         <Flow />
+      </section>
+      <section className="w-full hidden lg:block">
+        <PcFlow />
       </section>
 
       <section className="w-full h-screen bg-green">
@@ -51,14 +54,16 @@ export default function Home() {
         );
       })}
 
-      <section className="w-full lg:hidden">
-        <Case />
-      </section>
-      <section className="w-full hidden lg:block overflow-x-hidden">
-        <PcCase />
-      </section>
+      <div id="case" className="w-full">
+        <section className="w-full lg:hidden">
+          <Case />
+        </section>
+        <section className="w-full hidden lg:block overflow-x-hidden">
+          <PcCase />
+        </section>
+      </div>
 
-      <section className="w-full">
+      <section id="initiative" className="w-full">
         <Initiative />
       </section>
 

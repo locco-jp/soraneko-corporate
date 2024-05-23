@@ -236,7 +236,7 @@ export function PcCase() {
           key={m.name.en}
           className="h-full w-screen p-6 flex flex-col justify-center items-center box-border"
         >
-          <div className="h-full w-full max-h-700 max-w-1280 flex bg-white pl-20 py-20 pr-2">
+          <div className="h-full w-full max-h-700 max-w-7xl flex bg-white pl-20 py-20 pr-2">
             <div className="h-full aspect-square relative mr-16">
               <Image
                 src={`/zukan/bg/${i + 1}.png`}
