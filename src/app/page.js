@@ -29,7 +29,6 @@ export default function Home() {
 
       <section className="w-full">
         <About />
-        {/* <Button onClick={handleButtonClick} /> */}
       </section>
 
       {/* flow */}

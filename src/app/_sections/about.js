@@ -91,25 +91,38 @@ export default function ScrollAnimatedComponent() {
           </div>
           <div className="flex justify-center w-full">
             <Image
-              src="/about/1.png"
+              src="/about/standing_position_sp.png"
               alt="TODO"
-              className="w-full lg:pl-8"
+              className="w-full lg:hidden"
+              width="300"
+              height="300"
+            />
+            <Image
+              src="/about/standing_position_pc.png"
+              alt="TODO"
+              className="hidden w-full pl-8 lg:block"
               width="300"
               height="300"
             />
           </div>
         </div>
         <div className="w-full">
-          {/* TODO: sp画像追加 */}
           <Image
-            src="/about/2.png"
+            src="/about/support_area_pc.png"
             alt="TODO"
-            className="w-full lg:pl-12"
+            className="hidden w-full pl-12 lg:block"
             width={300}
             height={300}
           />
         </div>
       </div>
+      <Image
+        src="/about/support_area_sp.png"
+        alt="TODO"
+        className="w-full lg:hidden"
+        width={300}
+        height={300}
+      />
       {/* パララックス */}
       <div className="relative parallax-trigger">
         <Image
@@ -133,6 +146,10 @@ export default function ScrollAnimatedComponent() {
           width={300}
           height={300}
         />
+      </div>
+      {/* spacer */}
+      <div className="relative -z-10 bg-green h-56 w-full lg:h-144">
+        <div className="absolute -bottom-1 right-0 left-0 bg-green h-4 w-full"></div>
       </div>
     </div>
   );
