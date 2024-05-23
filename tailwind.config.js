@@ -25,6 +25,9 @@ module.exports = {
         navy: {DEFAULT: '#003269'},
         pink: {DEFAULT: '#EFC3C1'},
       },
+      width: {
+        '78per': '78%',
+      },
     },
   },
   plugins: [],

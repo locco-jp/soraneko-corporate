@@ -51,6 +51,38 @@ body {
   }
 }
 
+.-member-mt-10-pc-mt-0 {
+  margin-top: -2.5rem;
+  @media (min-width: 1024px) {
+    margin-top: 0 !important;
+  }
+}
+
+.member-block-pc-hidden {
+  display: block;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+/* modal */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 256ms ease-in-out;
+}
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+.ReactModal__Content {
+  overflow: visible !important;
+  @media (min-width: 1024px) {
+    inset: 10rem 16rem !important;
+  }
+}
+
 .button-shadow {
   box-shadow: 2px 2px #b42828;
 }
