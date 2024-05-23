@@ -1,13 +1,16 @@
 'use client';
-import {useRef, useEffect, useState} from 'react';
+import {useRef, useEffect, useState, useCallback} from 'react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import Button from './../_components/button';
 import {notoSansJP} from '../_utils/font';
+import {useRouter} from 'next/navigation';
 
 export default function Flow() {
   gsap.registerPlugin(ScrollTrigger);
+
+  const router = useRouter();
 
   const containerRef = useRef(null);
   const page1Ref = useRef(null);
@@ -49,20 +52,31 @@ export default function Flow() {
       .to(page1Element, {
         opacity: 0,
         y: 48,
+        zIndex: -1,
       })
       .from(page2Element, {
         opacity: 0,
         y: 48,
+        zIndex: -1,
       })
       .to(page2Element, {
         opacity: 0,
         y: 48,
+        zIndex: -1,
       })
       .from(page3Element, {
         opacity: 0,
         y: 48,
+        zIndex: -1,
       });
   }, []);
+
+  const handleInitiativeClick = useCallback(
+    () => router.push('#initiative'),
+    []
+  );
+
+  const handleCaseClick = useCallback(() => router.push('#case'), []);
 
   return (
     <div
@@ -110,7 +124,7 @@ export default function Flow() {
           </div>
 
           <div className="text-right mt-5">
-            <Button />
+            <Button onClick={handleInitiativeClick} />
           </div>
         </div>
       </div>
@@ -144,7 +158,7 @@ export default function Flow() {
               height={103}
             />
 
-            <Button />
+            <Button onClick={handleCaseClick} />
           </div>
         </div>
       </div>
@@ -195,6 +209,8 @@ export default function Flow() {
 export function PcFlow() {
   gsap.registerPlugin(ScrollTrigger);
 
+  const router = useRouter();
+
   const containerRef = useRef(null);
   const page1Ref = useRef(null);
   const page2Ref = useRef(null);
@@ -235,20 +251,31 @@ export function PcFlow() {
       .to(page1Element, {
         opacity: 0,
         y: 48,
+        zIndex: -1,
       })
       .from(page2Element, {
         opacity: 0,
         y: 48,
+        zIndex: -1,
       })
       .to(page2Element, {
         opacity: 0,
         y: 48,
+        zIndex: -1,
       })
       .from(page3Element, {
         opacity: 0,
         y: 48,
+        zIndex: -1,
       });
   }, []);
+
+  const handleInitiativeClick = useCallback(
+    () => router.push('#initiative'),
+    []
+  );
+
+  const handleCaseClick = useCallback(() => router.push('#case'), []);
 
   return (
     <div
@@ -303,7 +330,7 @@ export function PcFlow() {
             </div>
 
             <div className="text-right mt-5">
-              <Button />
+              <Button onClick={handleInitiativeClick} />
             </div>
           </div>
         </div>
@@ -339,7 +366,7 @@ export function PcFlow() {
             </p>
 
             <div className="text-right mt-9">
-              <Button />
+              <Button onClick={handleCaseClick} />
             </div>
           </div>
 
