@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollAnimatedComponent() {
   const componentRef = useRef(null);
-  console.log(isMobile);
 
   useEffect(() => {
     const element = componentRef.current;
