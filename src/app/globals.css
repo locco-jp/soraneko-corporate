@@ -94,3 +94,16 @@ body {
 .flex-fix {
   flex: 1 0 auto;
 }
+
+/* KV */
+.anim-fluffy-kv-monster {
+  animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+}
+@keyframes floating-y {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
