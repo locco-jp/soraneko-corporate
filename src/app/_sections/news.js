@@ -27,7 +27,7 @@ export default function News() {
   ];
 
   return (
-    <div className="relative w-full py-20 lg:py-40">
+    <div className="relative w-full py-20 lg:mb-60 lg:py-40">
       {/* 背景 */}
       <div className="absolute inset-0 -z-10">
         <div className="bg-white h-full w-11/12 rounded-br-3xl"></div>
