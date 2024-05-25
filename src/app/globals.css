@@ -116,3 +116,85 @@ body {
 .flex-fix {
   flex: 1 0 auto;
 }
+
+/* KV */
+.anim-fluffy-kv-neko {
+  animation: floating-neko 6s ease-in-out infinite alternate-reverse;
+}
+@keyframes floating-neko {
+  0% {
+    transform: translate(-5%, -5%) rotateZ(2deg) scale(0.95);
+  }
+  25% {
+    transform: translate(-2%, -2.5%) rotateZ(-2deg) scale(1);
+  }
+  50% {
+    transform: translate(0%, 0%) rotateZ(2deg) scale(0.9);
+  }
+  75% {
+    transform: translate(2%, 2.5%) rotateZ(-2deg) scale(1);
+  }
+  100% {
+    transform: translate(5%, 5%) rotateZ(2deg) scale(0.95);
+  }
+}
+.kv-transform {
+  transform: scale(5, 5) translateX(20%);
+  @media (min-width: 1024px) {
+    transform: scale(3.6, 3.6) translateX(20%);
+  }
+}
+.anim-fluffy-kv-monster {
+  animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+}
+@keyframes floating-y {
+  0% {
+    transform: translateY(-20%);
+    @media (min-width: 1024px) {
+      transform: translateY(-10%);
+    }
+  }
+  100% {
+    transform: translateY(0%);
+    @media (min-width: 1024px) {
+      transform: translateY(30%);
+    }
+  }
+}
+
+.kv-slideshow {
+  animation: loop-slide 40s infinite linear 0ms both;
+}
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* 雲 */
+.cloud-animation-1 {
+  animation: cloud-y 4s ease-in-out infinite 0.1s alternate-reverse;
+}
+.cloud-animation-2 {
+  animation: cloud-y 3s ease-in-out infinite -1s alternate-reverse;
+}
+.cloud-animation-3 {
+  animation: cloud-y 4s ease-in-out infinite -3s alternate-reverse;
+}
+.cloud-animation-4 {
+  animation: cloud-y 5s ease-in-out infinite -6s alternate-reverse;
+}
+.cloud-animation-5 {
+  animation: cloud-y 6s ease-in-out infinite -8s alternate-reverse;
+}
+@keyframes cloud-y {
+  0% {
+    transform: translateY(-8%);
+  }
+  100% {
+    transform: translateY(8%);
+  }
+}
