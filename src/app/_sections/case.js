@@ -20,6 +20,7 @@ export default function Case() {
 
   const itemLastRef = useRef(null);
   const itemLastMonsterRef = useRef(null);
+  const cloudRef = useRef(null);
 
   const didEffect = useRef(false);
 
@@ -29,6 +30,7 @@ export default function Case() {
 
     const itemLastElement = itemLastRef.current;
     const itemLastMonsterElement = itemLastMonsterRef.current;
+    const cloudElement = cloudRef.current;
 
     monsters.forEach((_, index) => {
       gsap
@@ -53,6 +55,7 @@ export default function Case() {
         scrollTrigger: {
           trigger: itemLastElement,
           start: 'center center',
+          end: 'center top',
           pin: true,
           scrub: true,
         },
@@ -61,10 +64,27 @@ export default function Case() {
         opacity: 0,
         y: 48,
       });
+
+    gsap.fromTo(
+      cloudElement,
+      {
+        yPercent: 60,
+      },
+      {
+        yPercent: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: cloudElement,
+          start: 'top bottom',
+          end: 'center top',
+          scrub: true,
+        },
+      }
+    );
   }, []);
 
   return (
-    <div className="bg-navy">
+    <div className="bg-navy relative">
       {monsters.map((m, i) => (
         <div
           ref={monsterItemRefs.current[i]}
@@ -169,6 +189,16 @@ export default function Case() {
           />
         </div>
       </div>
+
+      <div ref={cloudRef} className="absolute left-0 right-0 -bottom-4">
+        <Image
+          src="/zukan/ending/sp-cloud.png"
+          alt=""
+          className="w-full"
+          width={750}
+          height={420}
+        />
+      </div>
     </div>
   );
 }
@@ -182,6 +212,7 @@ export function PcCase() {
   const pcMonsterImageRefs = useRef([]);
   const pcMonsterNumberRefs = useRef([]);
   const pcItemLastMonsterRef = useRef(null);
+  // const cloudRef = useRef(null);
 
   monsters.forEach((_, index) => {
     pcMonsterImageRefs.current[index] = createRef();
@@ -195,6 +226,7 @@ export function PcCase() {
     const pcContainerElement = pcContainerRef.current;
     const containerWidth = pcContainerElement.offsetWidth;
     const pcItemLastMonsterElement = pcItemLastMonsterRef.current;
+    // const cloudElement = cloudRef.current;
 
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -223,12 +255,29 @@ export function PcCase() {
     tl.from(pcItemLastMonsterElement, {
       opacity: 0,
     });
+
+    // gsap.fromTo(
+    //   cloudElement,
+    //   {
+    //     yPercent: 10,
+    //   },
+    //   {
+    //     yPercent: 0,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: cloudElement,
+    //       start: 'top bottom',
+    //       end: 'center top',
+    //       scrub: true,
+    //     },
+    //   }
+    // );
   }, []);
 
   return (
     <div
       ref={pcContainerRef}
-      className="h-screen flex flex-nowrap bg-navy"
+      className="h-screen flex flex-nowrap bg-navy relative"
       style={{width: `${(monsters.length + 1) * 100}%`}}
     >
       {monsters.map((m, i) => (
@@ -331,6 +380,17 @@ export function PcCase() {
             style={{objectFit: 'cover'}}
           />
         </div>
+      </div>
+
+      {/* <div ref={cloudRef} className="absolute right-0 -bottom-64"> */}
+      <div className="absolute right-0 -bottom-64">
+        <Image
+          src="/zukan/ending/pc-cloud.png"
+          alt=""
+          className="w-screen"
+          width={1920}
+          height={1026}
+        />
       </div>
     </div>
   );
