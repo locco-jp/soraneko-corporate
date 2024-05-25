@@ -76,7 +76,7 @@ export default function Member() {
                       {/* sp 余白用 */}
                       <div className={`${isShow} h-32`}></div>
                       {/* アイテム */}
-                      <div className="relative flex justify-center w-full cursor-pointer lg:w-4/5 pl-4">
+                      <div className="relative flex justify-center w-full cursor-pointer lg:w-4/5 pl-4 hover-trigger">
                         <div
                           className={`w-full max-w-xs lg:max-w-none lg:px-0 lg:my-0 lg:${mx}`}
                           onClick={() => onOpenModal(item.sort_num)}
@@ -99,7 +99,14 @@ export default function Member() {
                           <Image
                             src={`/cat/default.png`}
                             alt="ねこ"
-                            className="block w-full"
+                            className="block w-full hover-hidden"
+                            width={300}
+                            height={300}
+                          />
+                          <Image
+                            src={`/cat/wink.png`}
+                            alt="ねこ"
+                            className="hidden w-full hover-show"
                             width={300}
                             height={300}
                           />
