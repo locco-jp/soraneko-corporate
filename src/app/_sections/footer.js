@@ -18,28 +18,33 @@ export default function Footer() {
 
   useEffect(() => {
     // 雲
-    gsap.fromTo(
-      '.parallax-footer-crowd',
-      {
-        yPercent: isDesktop ? -50 : -30,
-      },
-      {
-        yPercent: isDesktop ? 62 : 20,
+    gsap
+      .timeline({
         ease: 'none',
         scrollTrigger: {
           trigger: '.parallax-footer-trigger',
           start: 'top bottom',
-          end: 'bottom bottom',
+          end: 'top center',
           scrub: true,
         },
-      }
-    );
+      })
+      .fromTo(
+        '.parallax-footer-crowd',
+        {
+          y: isDesktop ? -100 : -100,
+          // yPercent: isDesktop ? -80 : -30,
+        },
+        {
+          y: isDesktop ? 0 : 0,
+          // yPercent: isDesktop ? 20 : 20,
+        }
+      );
   });
 
   return (
-    <div className="w-full pt-10 lg:pt-40  parallax-footer-trigger">
+    <div className="relative w-full pt-32 lg:pt-0  parallax-footer-trigger">
       {/* 雲 */}
-      <div className="relative parallax-footer-crowd">
+      <div className="absolute top-4 lg:-top-72 right-0 left-0 parallax-footer-crowd">
         <Image
           src="/footer_crowd.png"
           alt="FOOTER CLOUD"
@@ -48,12 +53,12 @@ export default function Footer() {
           height="300"
         />
         {/* spacer */}
-        <div className="absolute -bottom-6 lg:-bottom-8 right-0 left-0 -z-10 w-full h-full flex items-end">
-          <div className="bg-pink h-10 lg:h-24 w-full"></div>
+        <div className="absolute -bottom-8 lg:-bottom-24 right-0 left-0 -z-10 w-full h-full flex items-end lg:hidden">
+          <div className="bg-pink h-12 lg:h-40 w-full"></div>
         </div>
       </div>
       {/* フッターコンテンツ */}
-      <div className="parallax-footer-base w-full bg-pink pt-10 lg:pt-52">
+      <div className="parallax-footer-base w-full bg-pink pt-10 lg:pt-40">
         <div className="flex flex-col items-center justify-between w-full max-w-3xl px-6 pt-4 pb-10 lg:pb-16 mx-auto lg:flex-row lg:max-w-7xl lg:px-16 lg:pt-0">
           {/* ロゴ */}
           <Image
