@@ -39,13 +39,21 @@ export default function Zukan() {
       .from(bookElement, {
         scale: 0,
       })
+      .from(starElement, {
+        scale: 0,
+        rotate: -360,
+      })
       .to(starElement, {
-        transformOrigin: '44% 40%',
-        scale: 100,
+        scale: 10,
         rotate: 360,
       })
+      .from(nextElement, {
+        scale: 0,
+        rotate: -360,
+      })
       .to(nextElement, {
-        scale: 3,
+        scale: 10,
+        rotate: 360,
       })
       .from(titleElement, {
         opacity: 0,
@@ -96,7 +104,7 @@ export default function Zukan() {
 
         <div ref={bookRef} className="absolute inset-0">
           <Image
-            src="/zukan/opening/4.png"
+            src="/zukan/opening/book.png"
             alt="zukan-opening-book"
             style={{
               position: 'absolute',
@@ -111,24 +119,26 @@ export default function Zukan() {
 
           <Image
             ref={starRef}
-            src="/zukan/opening/5.png"
-            alt="zukan-opening-star"
+            src="/zukan/opening/star-red.png"
+            alt="zukan opening star red"
             style={{
               position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
+              top: '-7.7%',
+              left: '-8.1%',
             }}
-            width="1127"
-            height="1225"
+            width="764"
+            height="750"
           />
         </div>
 
-        <div
-          ref={nextRef}
-          className="absolute inset-0 bg-navy rounded-full scale-0"
-        ></div>
+        <div ref={nextRef} className="absolute inset-0">
+          <Image
+            src="/zukan/opening/star-blue.png"
+            alt="zukan opening star blue"
+            width="764"
+            height="750"
+          />
+        </div>
 
         <div className="absolute inset-0 flex justify-center items-center">
           <div ref={titleRef} className="text-center text-white mb-20">
