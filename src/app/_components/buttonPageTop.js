@@ -21,7 +21,7 @@ export default function ButtonPageTop() {
   };
 
   return (
-    <button ref={buttonPageTopRef} onClick={toTop}>
+    <button ref={buttonPageTopRef} onClick={toTop} style={{opacity: '0'}}>
       <Image
         src="/button_page_top.png"
         className="w-40 lg:w-52"
