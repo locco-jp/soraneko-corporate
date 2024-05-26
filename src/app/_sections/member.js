@@ -56,6 +56,42 @@ export default function Member() {
           height="1000"
         />
       </div>
+      {/* sp */}
+      <div className="absolute top-32 right-6 lg:hidden">
+        <div className="relative">
+          <Image
+            src="/bg-member_title.png"
+            alt="メンバー"
+            className="w-44"
+            width={100}
+            height={100}
+          />
+          <div className="absolute inset-0 h-full w-full flex justify-center items-center">
+            <div>
+              <div className="font-bold text-xl">メンバー</div>
+              <div>MEMBER</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* pc */}
+      <div className="absolute right-32 bottom-60 hidden lg:block">
+        <div className="relative">
+          <Image
+            src="/bg-member_title.png"
+            alt="メンバー"
+            className="w-52"
+            width={100}
+            height={100}
+          />
+          <div className="absolute inset-0 h-full w-full flex justify-center items-center">
+            <div>
+              <div className="font-bold text-xl">メンバー</div>
+              <div>MEMBER</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="w-full max-w-3xl mx-auto py-32 px-6 lg:max-w-7xl lg:py-48">
         {members.sections.map((section, i) => {
           let jc = i % 2 === 0 ? 'justify-end' : 'justify-start';
