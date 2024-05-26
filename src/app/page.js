@@ -14,6 +14,7 @@ import Company from './_sections/company';
 import Footer from './_sections/footer';
 import News from './_sections/news';
 import Flow, {PcFlow} from './_sections/flow';
+import ButtonPageTop from './_components/buttonPageTop';
 
 export default function Home() {
   const router = useRouter();
@@ -22,7 +23,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between text-primary">
+    <main className="relative flex min-h-screen flex-col items-center justify-between text-primary">
       <section className="w-full">
         <KV />
       </section>
@@ -90,6 +91,11 @@ export default function Home() {
       <section className="w-full">
         <Footer />
       </section>
+
+      {/* top button */}
+      <div className="fixed bottom-12 right-12">
+        <ButtonPageTop />
+      </div>
     </main>
   );
 }
