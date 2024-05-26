@@ -119,11 +119,8 @@ body {
 
 /* hover */
 .hover-trigger:hover {
-  .hover-hidden {
-    display: none;
-  }
-  .hover-show {
-    display: block;
+  .hover-opacity-0 {
+    opacity: 0;
   }
 }
 
