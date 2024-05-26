@@ -49,7 +49,7 @@ export default function ScrollAnimatedComponent() {
   }, []);
 
   return (
-    <div ref={componentRef}>
+    <div ref={componentRef} className="relative w-full">
       <div className="w-full max-w-3xl mx-auto px-8">
         <p className="text-xl font-bold mb-9 lg:mb-0">
           私たちは、
@@ -150,6 +150,46 @@ export default function ScrollAnimatedComponent() {
       {/* spacer */}
       <div className="relative -z-10 bg-green h-56 w-full lg:h-144">
         <div className="absolute -bottom-1 right-0 left-0 bg-green h-4 w-full"></div>
+      </div>
+      {/* 雲 */}
+      <div className="absolute inset-0 -z-20 w-full h-full">
+        <div className="relative w-full h-full">
+          <Image
+            src="/cloud/4.png"
+            alt="雲"
+            className="cloud-animation-1 absolute -top-24 -right-10 lg:right-1 hidden lg:block w-52"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="/cloud/5.png"
+            alt="雲"
+            className="cloud-animation-5 absolute top-1 right-2 lg:left-40 w-60"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="/cloud/1.png"
+            alt="雲"
+            className="cloud-animation-1 absolute top-72 left-0 lg:top-40 lg:right-52 w-40"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="/cloud/2.png"
+            alt="雲"
+            className="cloud-animation-4 absolute right-0 top-1/3 lg:top-96 lg:left-72 w-52"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="/cloud/1.png"
+            alt="雲"
+            className="cloud-animation-3 absolute bottom-72 lg:bottom-2/4 right-1/3 w-24 lg:w-52"
+            width={100}
+            height={100}
+          />
+        </div>
       </div>
     </div>
   );
