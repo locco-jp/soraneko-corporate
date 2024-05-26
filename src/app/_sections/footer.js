@@ -17,6 +17,20 @@ export default function Footer() {
   ];
 
   useEffect(() => {
+    let {startY, endY} = 0;
+    if (window.innerWidth < 430) {
+      // sp
+      startY = -100;
+      endY = 20;
+    } else if (window.innerWidth > 1024) {
+      // pc
+      startY = -200;
+      endY = -60;
+    } else {
+      // tl
+      startY = -180;
+      endY = -100;
+    }
     // 雲
     gsap
       .timeline({
@@ -24,19 +38,17 @@ export default function Footer() {
         scrollTrigger: {
           trigger: '.parallax-footer-trigger',
           start: 'top bottom',
-          end: 'top center',
+          end: 'bottom center',
           scrub: true,
         },
       })
       .fromTo(
         '.parallax-footer-crowd',
         {
-          y: isDesktop ? -100 : -100,
-          // yPercent: isDesktop ? -80 : -30,
+          y: startY,
         },
         {
-          y: isDesktop ? 0 : 0,
-          // yPercent: isDesktop ? 20 : 20,
+          y: endY,
         }
       );
   });
@@ -53,8 +65,8 @@ export default function Footer() {
           height="300"
         />
         {/* spacer */}
-        <div className="absolute -bottom-8 lg:-bottom-24 right-0 left-0 -z-10 w-full h-full flex items-end lg:hidden">
-          <div className="bg-pink h-12 lg:h-40 w-full"></div>
+        <div className="absolute -bottom-10 lg:-bottom-24 right-0 left-0 -z-10 w-full h-full flex items-end lg:hidden">
+          <div className="bg-pink h-20 lg:h-44 w-full"></div>
         </div>
       </div>
       {/* フッターコンテンツ */}
