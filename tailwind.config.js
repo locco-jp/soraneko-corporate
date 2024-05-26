@@ -35,6 +35,9 @@ module.exports = {
       lineHeight: {
         '3rem': '3rem',
       },
+      padding: {
+        '800px': '800px',
+      },
     },
   },
   plugins: [],

@@ -73,7 +73,7 @@ export default function ScrollAnimatedComponent() {
 
   return (
     <div ref={componentRef} className="relative w-full">
-      <div className="w-full max-w-md lg:max-w-7xl mx-auto px-6 lg:pb-600px">
+      <div className="w-full max-w-md lg:max-w-7xl mx-auto px-6 lg:pb-800px">
         <p
           className={`${notoSansJP.className} text-xl leading-loose lg:text-4xl lg:leading-loose font-bold mb-9 lg:mb-0`}
         >
