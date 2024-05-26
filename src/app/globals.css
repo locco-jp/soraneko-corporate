@@ -208,3 +208,28 @@ body {
     transform: translateY(8%);
   }
 }
+
+/* 取り組み紹介 */
+.initiative-slideshow-left {
+  animation: initiative-loop-slide-left 30s infinite linear 0ms both;
+}
+@keyframes initiative-loop-slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.initiative-slideshow-right {
+  animation: initiative-loop-slide-right 70s infinite linear 0ms both;
+}
+@keyframes initiative-loop-slide-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
