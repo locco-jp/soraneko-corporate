@@ -11,10 +11,7 @@ export default function ScrollAnimatedComponent() {
   const componentRef = useRef(null);
 
   useEffect(() => {
-    const element = componentRef.current;
-
     let {landscapeStartY, landscapeEndY, cloudStartY, cloudEndY} = 0;
-    console.log(window);
     if (window.innerWidth < 430) {
       // sp
       landscapeStartY = -200;
