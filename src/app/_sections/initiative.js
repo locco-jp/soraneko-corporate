@@ -156,7 +156,7 @@ export default function Initiative() {
   ];
 
   return (
-    <div className="modalInitiativeContainer w-full py-40">
+    <div className="modalInitiativeContainer relative w-full py-40">
       <div className="max-w-3xl mx-auto lg:max-w-7xl px-6 mb-8">
         <h2 className="text-4xl font-bold mb-4">取り組み紹介</h2>
         <p className="text-xl font-bold">INITIATIVE</p>
@@ -229,6 +229,33 @@ export default function Initiative() {
           </div>
         </div>
       </div>
+      {/* 雲 */}
+      <div className="absolute inset-0 -z-20 w-full h-full">
+        <div className="relative w-full h-full">
+          <Image
+            src="/cloud/5.png"
+            alt="雲"
+            className="cloud-animation-5 absolute top-4 right-2 lg:left-52 w-60"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="/cloud/4.png"
+            alt="雲"
+            className="cloud-animation-1 absolute bottom-12 left-1 lg:right-1  w-52"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="/cloud/1.png"
+            alt="雲"
+            className="cloud-animation-1 absolute -bottom-12 right-0  lg:right-52 w-40"
+            width={100}
+            height={100}
+          />
+        </div>
+      </div>
+
       <Modal
         isOpen={isModalOpen}
         style={modalStyle}
