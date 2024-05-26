@@ -2,6 +2,7 @@ import {useEffect, useRef, useState} from 'react';
 import CompanyItem from '../_components/company';
 import Modal from 'react-modal';
 import Image from 'next/image';
+import SectionTitle from '../_components/sectionTitle';
 
 Modal.setAppElement('.modalInitiativeContainer');
 
@@ -154,12 +155,10 @@ export default function Initiative() {
       image: '/initiative/dummy_5.png',
     },
   ];
-
   return (
     <div className="modalInitiativeContainer relative w-full py-40">
       <div className="max-w-3xl mx-auto lg:max-w-7xl px-6 mb-8">
-        <h2 className="text-4xl font-bold mb-4">取り組み紹介</h2>
-        <p className="text-xl font-bold">INITIATIVE</p>
+        <SectionTitle ja="取り組み紹介" en="INITIATIVE" />
       </div>
       <div className="w-full overflow-hidden mb-6">
         <div

@@ -1,13 +1,11 @@
 import gsap from 'gsap';
 import Image from 'next/image';
 import {monsters} from '../_constants/monster';
+import {notoSansJP} from '../_utils/font';
 
 export default function KV() {
   return (
-    <div
-      className="relative flex flex-col justify-center items-center w-full"
-      style={{height: '80vh'}}
-    >
+    <div className="relative flex flex-col justify-center items-center h-80vh lg:h-screen w-full">
       {/* 背景 */}
       <div className="absolute inset-0 -z-30 w-full h-full">
         {/* sp */}
@@ -31,7 +29,7 @@ export default function KV() {
       <div className="flex flex-col justify-center item-center w-full h-full">
         <div className="w-full h-full max-w-3xl lg:max-w-7xl mx-auto">
           <div className="pt-28 px-8">
-            <h1 className="max-w-lg lg:max-w-none mb-8">
+            <h1 className={`max-w-lg lg:max-w-none mb-8`}>
               <Image
                 src="/company_name.png"
                 alt="FLYING CAT LLC"
@@ -40,7 +38,9 @@ export default function KV() {
                 height="1760"
               />
             </h1>
-            <p className="font-bold">
+            <p
+              className={`text-sm lg:text-xl leading-loose lg:leading-loose font-bold ${notoSansJP.className}`}
+            >
               空とぶネコは地域の生産者や製造者が挑む
               <br />
               事業開発や企業再生をハンズオンで支援する
@@ -63,10 +63,7 @@ export default function KV() {
       </div>
       {/* 妖怪 スライド */}
       <div className="absolute inset-0 -z-10 flex items-end pb-20 lg:pb-0 lg:items-center h-full overflow-x-hidden">
-        <div
-          className="flex kv-transform"
-          // style={{transform: 'scale(5, 5) translateX(20%)'}}
-        >
+        <div className="flex kv-transform">
           {[1, 2].map(i => {
             return (
               <div

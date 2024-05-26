@@ -2,7 +2,8 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useRef, useEffect} from 'react';
 import Image from 'next/image';
-import {isMobile} from 'react-device-detect';
+import {isDesktop, isMobile, isTablet} from 'react-device-detect';
+import {mochiy, notoSansJP} from '../_utils/font';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,21 +11,40 @@ export default function ScrollAnimatedComponent() {
   const componentRef = useRef(null);
 
   useEffect(() => {
-    const element = componentRef.current;
+    let {landscapeStartY, landscapeEndY, cloudStartY, cloudEndY} = 0;
+    if (window.innerWidth < 430) {
+      // sp
+      landscapeStartY = -200;
+      landscapeEndY = -140;
+      cloudStartY = -200;
+      cloudEndY = -32;
+    } else if (window.innerWidth > 1024) {
+      // pc
+      landscapeStartY = -200;
+      landscapeEndY = -370;
+      cloudStartY = -300;
+      cloudEndY = 100;
+    } else {
+      // tl
+      landscapeStartY = -200;
+      landscapeEndY = -250;
+      cloudStartY = -200;
+      cloudEndY = -60;
+    }
 
     // 風景
     gsap.fromTo(
       '.parallax-landscape',
       {
-        yPercent: isMobile ? 0 : -10,
+        y: landscapeStartY,
       },
       {
-        yPercent: isMobile ? 42 : 35,
+        y: landscapeEndY,
         ease: 'none',
         scrollTrigger: {
           trigger: '.parallax-trigger',
-          start: 'center bottom',
-          end: 'center top',
+          start: isDesktop ? 'top bottom' : 'top 90%',
+          end: isDesktop ? 'bottom bottom' : 'center center',
           scrub: true,
         },
       }
@@ -33,15 +53,15 @@ export default function ScrollAnimatedComponent() {
     gsap.fromTo(
       '.parallax-crowd',
       {
-        yPercent: isMobile ? 5 : -16,
+        y: cloudStartY,
       },
       {
-        yPercent: isMobile ? 82 : 120,
+        y: cloudEndY,
         ease: 'none',
         scrollTrigger: {
           trigger: '.parallax-trigger',
-          start: 'top bottom',
-          end: 'center top',
+          start: isDesktop ? 'top bottom' : 'top 90%',
+          end: isDesktop ? 'bottom bottom' : 'center center',
           scrub: true,
         },
       }
@@ -50,8 +70,10 @@ export default function ScrollAnimatedComponent() {
 
   return (
     <div ref={componentRef} className="relative w-full">
-      <div className="w-full max-w-3xl mx-auto px-8">
-        <p className="text-xl font-bold mb-9 lg:mb-0">
+      <div className="w-full max-w-md lg:max-w-7xl mx-auto px-6 lg:pb-800px">
+        <p
+          className={`${notoSansJP.className} text-xl leading-loose lg:text-4xl lg:leading-loose font-bold mb-9 lg:mb-0`}
+        >
           私たちは、
           <br className="lg:hidden" />
           デジタル・ローカル・コマースを
@@ -65,7 +87,9 @@ export default function ScrollAnimatedComponent() {
           取り組みます。
         </p>
         <div className="flex flex-col justify-center lg:flex-row w-full mb-10 lg:mb-20">
-          <div className="w-full text-xs font-bold leading-7 mb-10 lg:mb-0 lg:pt-8">
+          <div
+            className={`w-full ${notoSansJP.className} lg:text-xl font-bold leading-loose lg:leading-3rem mb-10 lg:mb-0 lg:pt-8`}
+          >
             <p className="mb-8">
               個人経営店からグローバル展開する企業まで、
               <br />
@@ -100,7 +124,7 @@ export default function ScrollAnimatedComponent() {
             <Image
               src="/about/standing_position_pc.png"
               alt="TODO"
-              className="hidden w-full pl-8 lg:block"
+              className="hidden w-full pl-8 object-contain lg:block"
               width="300"
               height="300"
             />
@@ -116,39 +140,43 @@ export default function ScrollAnimatedComponent() {
           />
         </div>
       </div>
-      <Image
-        src="/about/support_area_sp.png"
-        alt="TODO"
-        className="w-full lg:hidden"
-        width={300}
-        height={300}
-      />
-      {/* パララックス */}
-      <div className="relative parallax-trigger">
+      <div className="max-w-md mx-auto pb-60 lg:hidden">
         <Image
-          src="/parallax/2.png"
-          alt="風景"
-          className="block parallax-landscape w-full"
-          width={300}
-          height={300}
-        />
-        <Image
-          src="/parallax/1_pc.png"
-          alt="雲"
-          className="parallax-crowd absolute inset-0 hidden lg:block w-full"
-          width={300}
-          height={300}
-        />
-        <Image
-          src="/parallax/1_sp.png"
-          alt="雲"
-          className="parallax-crowd absolute inset-0 lg:hidden w-full"
+          src="/about/support_area_sp.png"
+          alt="TODO"
+          className="w-full object-contain"
           width={300}
           height={300}
         />
       </div>
+      {/* パララックス */}
+      <div className="parallax-trigger absolute bottom-0 right-0 left-0">
+        <div className="relative w-full h-full">
+          <Image
+            src="/parallax/2.png"
+            alt="風景"
+            className="parallax-landscape block w-full"
+            width={300}
+            height={300}
+          />
+          <Image
+            src="/parallax/1_pc.png"
+            alt="雲"
+            className="parallax-crowd absolute inset-0 hidden lg:block w-full"
+            width={300}
+            height={300}
+          />
+          <Image
+            src="/parallax/1_sp.png"
+            alt="雲"
+            className="parallax-crowd absolute inset-0 lg:hidden w-full"
+            width={300}
+            height={300}
+          />
+        </div>
+      </div>
       {/* spacer */}
-      <div className="relative -z-10 bg-green h-56 w-full lg:h-144">
+      <div className="relative -z-10 bg-green h-48 w-full lg:h-72">
         <div className="absolute -bottom-1 right-0 left-0 bg-green h-4 w-full"></div>
       </div>
       {/* 雲 */}

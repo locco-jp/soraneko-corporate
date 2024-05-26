@@ -30,6 +30,13 @@ module.exports = {
       },
       height: {
         144: '36rem',
+        '80vh': '80vh',
+      },
+      lineHeight: {
+        '3rem': '3rem',
+      },
+      padding: {
+        '800px': '800px',
       },
     },
   },

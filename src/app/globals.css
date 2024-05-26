@@ -55,17 +55,19 @@ body {
 .btn-primary {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #b42828;
   border: 1px solid #b42828;
   background-color: transparent;
   font-weight: bold;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem;
   border-radius: 9999px;
   flex-grow: 1;
   flex-shrink: 1;
   width: 100%;
   @media (min-width: 1024px) {
     max-width: 300px;
+    font-weight: normal;
   }
 }
 .btn-primary:hover {
@@ -119,11 +121,8 @@ body {
 
 /* hover */
 .hover-trigger:hover {
-  .hover-hidden {
-    display: none;
-  }
-  .hover-show {
-    display: block;
+  .hover-opacity-0 {
+    opacity: 0;
   }
 }
 

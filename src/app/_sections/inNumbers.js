@@ -1,17 +1,15 @@
 import Image from 'next/image';
+import SectionTitle from '../_components/sectionTitle';
 
 export default function InNumbers() {
-  const items = [{image: ''}];
   return (
     <div className="relative w-full pt-40">
-      <div className="flex flex-col lg:flex-row max-w-3xl mx-auto lg:max-w-7xl px-6 mb-8">
+      <div className="flex flex-col lg:flex-row max-w-md mx-auto lg:max-w-7xl px-6 mb-8">
         <div className="flex-fix lg:mr-20 mb-4">
-          <h2 className="text-4xl font-bold mb-4">
-            数字で見る
-            <br />
-            空とぶネコ
-          </h2>
-          <p className="text-xl font-bold">DATA</p>
+          <SectionTitle
+            ja='数字で見る<br class="hidden lg:block"/>空とぶネコ'
+            en="DATA"
+          />
         </div>
         <div className="flex flex-wrap items-center justify-center">
           {new Array(7).fill(0).map((_, i) => {
