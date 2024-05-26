@@ -44,7 +44,6 @@ export default function Member() {
           src="/bg-member-sp.png"
           alt="メンバー背景"
           className="block w-full h-full lg:hidden"
-          // style={{objectFit: 'contain'}}
           width="100"
           height="100"
         />
@@ -52,7 +51,6 @@ export default function Member() {
           src="/bg-member-pc.png"
           alt="メンバー背景"
           className="w-full h-full hidden lg:block"
-          // style={{objectFit: 'cover'}}
           width="1000"
           height="1000"
         />
