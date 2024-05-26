@@ -3,8 +3,8 @@ import Image from 'next/image';
 export default function company(prop) {
   let item = prop.item;
   return (
-    <div className="flex-fix px-2">
-      <div className="max-w- lg:max-w-xs w-60 bg-white p-6 rounded-tl-lg rounded-br-lg">
+    <div className="relative flex-fix px-2">
+      <div className="lg:max-w-xs w-60 bg-white p-6 rounded-tl-lg rounded-br-lg">
         <div
           className="h-full w-full flex justify-center items-center"
           style={{aspectRatio: '6 / 3'}}
@@ -18,6 +18,11 @@ export default function company(prop) {
           />
         </div>
       </div>
+      {item.description && (
+        <div className="absolute top-2 right-4">
+          <Image src="/symbol_cat.svg" alt="マーク" width={30} height={40} />
+        </div>
+      )}
     </div>
   );
 }
