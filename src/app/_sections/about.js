@@ -3,6 +3,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useRef, useEffect} from 'react';
 import Image from 'next/image';
 import {isMobile} from 'react-device-detect';
+import {mochiy, notoSansJP} from '../_utils/font';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,8 +51,10 @@ export default function ScrollAnimatedComponent() {
 
   return (
     <div ref={componentRef} className="relative w-full">
-      <div className="w-full max-w-3xl mx-auto px-8">
-        <p className="text-xl font-bold mb-9 lg:mb-0">
+      <div className="flex flex-col items-center w-full max-w-md lg:max-w-7xl mx-auto px-6">
+        <p
+          className={`${notoSansJP.className} text-xl lg:text-4xl leading-loose font-bold mb-9 lg:mb-0`}
+        >
           私たちは、
           <br className="lg:hidden" />
           デジタル・ローカル・コマースを
@@ -65,7 +68,9 @@ export default function ScrollAnimatedComponent() {
           取り組みます。
         </p>
         <div className="flex flex-col justify-center lg:flex-row w-full mb-10 lg:mb-20">
-          <div className="w-full text-xs font-bold leading-7 mb-10 lg:mb-0 lg:pt-8">
+          <div
+            className={`w-full ${notoSansJP.className} lg:text-xl font-bold leading-loose lg:leading-3rem mb-10 lg:mb-0 lg:pt-8`}
+          >
             <p className="mb-8">
               個人経営店からグローバル展開する企業まで、
               <br />
@@ -100,7 +105,7 @@ export default function ScrollAnimatedComponent() {
             <Image
               src="/about/standing_position_pc.png"
               alt="TODO"
-              className="hidden w-full pl-8 lg:block"
+              className="hidden w-full pl-8 object-contain lg:block"
               width="300"
               height="300"
             />
@@ -116,15 +121,17 @@ export default function ScrollAnimatedComponent() {
           />
         </div>
       </div>
-      <Image
-        src="/about/support_area_sp.png"
-        alt="TODO"
-        className="w-full lg:hidden"
-        width={300}
-        height={300}
-      />
+      <div className="max-w-md mx-auto">
+        <Image
+          src="/about/support_area_sp.png"
+          alt="TODO"
+          className="w-full object-contain lg:hidden"
+          width={300}
+          height={300}
+        />
+      </div>
       {/* パララックス */}
-      <div className="relative parallax-trigger">
+      {/* <div className="relative parallax-trigger">
         <Image
           src="/parallax/2.png"
           alt="風景"
@@ -146,7 +153,7 @@ export default function ScrollAnimatedComponent() {
           width={300}
           height={300}
         />
-      </div>
+      </div> */}
       {/* spacer */}
       <div className="relative -z-10 bg-green h-56 w-full lg:h-144">
         <div className="absolute -bottom-1 right-0 left-0 bg-green h-4 w-full"></div>
