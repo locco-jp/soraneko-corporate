@@ -24,7 +24,7 @@ export default function ButtonPageTop() {
     <button ref={buttonPageTopRef} onClick={toTop}>
       <Image
         src="/button_page_top.png"
-        className="w-52"
+        className="w-40 lg:w-52"
         alt=""
         width={100}
         height={100}

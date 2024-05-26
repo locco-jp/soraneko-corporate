@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* top button */}
-      <div className="fixed bottom-12 right-12">
+      <div className="fixed bottom-4 right-4 lg:bottom-12 lg:right-12">
         <ButtonPageTop />
       </div>
     </main>
