@@ -27,8 +27,6 @@ const modalStyle = {
 };
 
 export default function Member() {
-  let flatItems = members.sections.flat();
-
   const [isModalOpen, setModalIsOpen] = useState(false);
   const [modalItem, setModalItem] = useState({});
 
@@ -55,43 +53,55 @@ export default function Member() {
           height="1000"
         />
       </div>
-      {/* sp */}
-      <div className="absolute top-32 right-6 lg:hidden">
-        <div className="relative">
-          <Image
-            src="/bg-member_title.png"
-            alt="メンバー"
-            className="w-44"
-            width={100}
-            height={100}
-          />
-          <div className="absolute inset-0 h-full w-full flex justify-center items-center">
-            <div>
-              <div className="font-bold text-xl">メンバー</div>
-              <div>MEMBER</div>
+      <div className="relative w-full max-w-md mx-auto py-32 px-6 lg:max-w-7xl lg:py-48">
+        {/* sp */}
+        <div className="absolute top-32 right-4 lg:hidden">
+          <div className="relative">
+            <Image
+              src="/bg-member_title.png"
+              alt="メンバー"
+              className="w-48"
+              width={100}
+              height={100}
+            />
+            <div className="absolute inset-0 h-full w-full flex justify-center items-center">
+              <div>
+                <h2
+                  className={`${notoSansJP.className} text-2xl lg:text-4xl font-bold mb-1`}
+                >
+                  メンバー
+                </h2>
+                <p className="font-mundial text-md lg:text-xl font-bold">
+                  MEMBER
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* pc */}
-      <div className="absolute right-32 bottom-60 hidden lg:block">
-        <div className="relative">
-          <Image
-            src="/bg-member_title.png"
-            alt="メンバー"
-            className="w-52"
-            width={100}
-            height={100}
-          />
-          <div className="absolute inset-0 h-full w-full flex justify-center items-center">
-            <div>
-              <div className="font-bold text-xl">メンバー</div>
-              <div>MEMBER</div>
+        {/* pc */}
+        <div className="absolute right-2 bottom-60 hidden lg:block">
+          <div className="relative">
+            <Image
+              src="/bg-member_title.png"
+              alt="メンバー"
+              className="w-60"
+              width={100}
+              height={100}
+            />
+            <div className="absolute inset-0 h-full w-full flex justify-center items-center">
+              <div>
+                <h2
+                  className={`${notoSansJP.className} text-2xl lg:text-3xl font-bold mb-1`}
+                >
+                  メンバー
+                </h2>
+                <p className="font-mundial text-md lg:text-xl font-bold">
+                  MEMBER
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full max-w-md mx-auto py-32 px-6 lg:max-w-7xl lg:py-48">
         {members.sections.map((section, i) => {
           let jc = i % 2 === 0 ? 'justify-end' : 'justify-start';
           let nmt = i % 2 === 0 ? '' : '-member-mt-10-pc-mt-0';
@@ -118,7 +128,9 @@ export default function Member() {
                         >
                           {/* テキスト */}
                           <div className="absolute -left-2 bottom-full flex justify-center items-center w-full origin-bottom-left rotate-90">
-                            <span className="inline-block font-bold text-2xl lg:text-3xl text-white mr-1">
+                            <span
+                              className={`${mochiy.className} inline-block font-bold text-2xl lg:text-3xl text-white mr-1`}
+                            >
                               {item.shot_name}
                             </span>
                             <div className="w-6 h-6 lg:w-10 lg:h-10 -rotate-90">
