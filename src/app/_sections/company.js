@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import SectionTitle from '../_components/sectionTitle';
 
 export default function Company() {
   let items = [
@@ -20,10 +21,9 @@ export default function Company() {
   ];
 
   return (
-    <div className="relative flex flex-col lg:flex-row w-full max-w-3xl mx-auto lg:max-w-7xl py-40 px-8">
+    <div className="relative flex flex-col lg:flex-row w-full max-w-md mx-auto lg:max-w-7xl py-40 px-8">
       <div className="w-full lg:w-1/5 flex-grow flex-shrink mb-8 lg:mb-0">
-        <h2 className="text-4xl font-bold mb-2 lg:mb-4">会社概要</h2>
-        <p className="text-xl font-bold">COMPANY</p>
+        <SectionTitle ja="会社概要" en="COMPANY" />
       </div>
       <div className="w-full lg:w-3/5">
         <div>
@@ -33,10 +33,10 @@ export default function Company() {
                 key={`company-${i}`}
                 className="flex flex-col lg:flex-row border-b border-primary pb-4 mb-4"
               >
-                <div className="font-bold mb-1 lg:mb-0 lg:font-normal lg:w-60">
+                <div className="font-bold mb-1 flex-fix lg:mb-0 lg:font-normal lg:w-60">
                   {item.label}
                 </div>
-                <div className="whitespace-pre-wrap">{item.text}</div>
+                <div className="w-full whitespace-pre-wrap">{item.text}</div>
               </div>
             );
           })}
