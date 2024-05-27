@@ -5,7 +5,6 @@ import About from './_sections/about';
 import Zukan from './_sections/zukan';
 import Case, {PcCase} from './_sections/case';
 import Initiative from './_sections/initiative';
-import Button from './_components/button';
 import {useRouter} from 'next/navigation';
 import {useCallback} from 'react';
 import Member from './_sections/member';
@@ -18,9 +17,6 @@ import ButtonPageTop from './_components/buttonPageTop';
 
 export default function Home() {
   const router = useRouter();
-  const handleButtonClick = useCallback(() => {
-    router.push('/sample');
-  }, []);
 
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-between text-primary">
