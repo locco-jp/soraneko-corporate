@@ -124,7 +124,9 @@ export default function Case() {
               <div>
                 <p className="text-xs font-bold tracking-widest mb-1">妖怪</p>
                 <p className="text-2xl tracking-wider font-bold">{m.name.ja}</p>
-                <p className="font-mundial text-sm">{m.name.en}</p>
+                <p className="font-mundial text-sm tracking-widest">
+                  {m.name.en}
+                </p>
               </div>
 
               <div>
