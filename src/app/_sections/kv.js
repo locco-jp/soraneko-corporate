@@ -1,4 +1,3 @@
-import gsap from 'gsap';
 import Image from 'next/image';
 import {monsters} from '../_constants/monster';
 import {notoSansJP} from '../_utils/font';
@@ -15,6 +14,7 @@ export default function KV() {
           className="w-full h-full lg:hidden"
           width="1024"
           height="700"
+          priority
         />
         {/* pc */}
         <Image
@@ -23,6 +23,7 @@ export default function KV() {
           className="w-full h-full hidden lg:block"
           width="1024"
           height="700"
+          priority
         />
       </div>
       {/* text */}
@@ -36,6 +37,7 @@ export default function KV() {
                 className="w-full lg:w-1/2"
                 width="1766"
                 height="1760"
+                priority
               />
             </h1>
             <p
@@ -57,6 +59,7 @@ export default function KV() {
               style={{objectFit: 'contain'}}
               width="1766"
               height="1760"
+              priority
             />
           </div>
         </div>
@@ -82,6 +85,7 @@ export default function KV() {
                         className="block w-full h-auto object-contain"
                         width="500"
                         height="500"
+                        priority
                       />
                     </div>
                   );
@@ -100,6 +104,7 @@ export default function KV() {
             className="cloud-animation-1 absolute top-1 -left-10 lg:left-1 w-52"
             width={100}
             height={100}
+            priority
           />
           <Image
             src="/cloud/5.png"
@@ -107,6 +112,7 @@ export default function KV() {
             className="cloud-animation-5 absolute top-32 right-6 lg:right-80 w-60"
             width={100}
             height={100}
+            priority
           />
           <Image
             src="/cloud/4.png"
@@ -114,6 +120,7 @@ export default function KV() {
             className="hidden cloud-animation-1 absolute top-28 right-56 w-40"
             width={100}
             height={100}
+            priority
           />
           <Image
             src="/cloud/2.png"
@@ -121,6 +128,7 @@ export default function KV() {
             className="cloud-animation-4 absolute bottom-36 right-72 w-52"
             width={100}
             height={100}
+            priority
           />
           <Image
             src="/cloud/1.png"
@@ -128,6 +136,7 @@ export default function KV() {
             className="cloud-animation-3 absolute bottom-8 lg:bottom-40 left-1/3 w-52"
             width={100}
             height={100}
+            priority
           />
           <Image
             src="/cloud/3.png"
@@ -135,6 +144,7 @@ export default function KV() {
             className="cloud-animation-2 absolute bottom-56 right-4 lg:right-20 w-40"
             width={100}
             height={100}
+            priority
           />
         </div>
       </div>
