@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - sp, tb ... max-width: 768px (max-w-3xl)
 - pc ... max-width: 1280px (max-w-7xl)
   （作成しながら様子を見て変更）
+
+## Animation
+
+- Javascript ライブラリの gsap を使用
+- Docs ... https://gsap.com/docs/v3/
+
+## Font
+
+- 一部 Adobe Font を使用
+- ローカルに `.env.local` を用意し、ご自身の Adobe アカウントから`NEXT_PUBLIC_ADOBE_FONTS_KIT_ID` を設定してください。
+
+## Modal
+
+- `react-modal` を使用
+- Docs ... https://github.com/reactjs/react-modal
