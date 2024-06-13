@@ -43,7 +43,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Font
 
 - 一部 Adobe Font を使用
-- ローカルに `.env.local` を用意し、`NEXT_PUBLIC_ADOBE_FONTS_KIT_ID` に `jqx6his` の値を代入する
+- ローカルに `.env.local` を用意し、ご自身の Adobe アカウントから`NEXT_PUBLIC_ADOBE_FONTS_KIT_ID` を設定してください。
 
 ## Modal
 
